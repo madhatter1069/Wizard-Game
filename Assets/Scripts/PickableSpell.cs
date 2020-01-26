@@ -20,4 +20,13 @@ public class PickableSpell : MonoBehaviour
     {
         
     }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    { 
+        if (other.gameObject.CompareTag("Player"))
+        {
+            other.gameObject.GetComponent<Player>().spell = spellObjects[spellIndex];
+            Destroy(gameObject);
+        }
+    }
 }
