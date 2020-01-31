@@ -5,9 +5,10 @@ using UnityEngine;
 public class PickableSpell : MonoBehaviour
 {
 
-    public int spellIndex;
+    //public int spellIndex;
 
-    public GameObject[] spellObjects;
+    //public GameObject[] spellObjects;
+    [SerializeField] private GameObject spellProjectile;
 
 
     void Start()
@@ -21,11 +22,12 @@ public class PickableSpell : MonoBehaviour
         
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    void OnTriggerEnter2D(Collider2D other)
     { 
+        //Debug.Log("Spell select");
         if (other.gameObject.CompareTag("Player"))
         {
-            other.gameObject.GetComponent<Player>().spell = spellObjects[spellIndex];
+            other.gameObject.GetComponent<Player>().ChangeSpell(spellProjectile);
             Destroy(gameObject);
         }
     }
