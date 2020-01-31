@@ -5,8 +5,8 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public int playId;
-    public float moveSpeed;
-    public GameObject spell;
+    public float moveSpeed = 4;
+    [SerializeField] private GameObject spell;
     public float shootCD;
     float lastShootTime;
 
@@ -18,6 +18,9 @@ public class Player : MonoBehaviour
         lastShootTime = Time.time;
     }
 
+    public void ChangeSpell(GameObject Newspell){
+        spell=Newspell;
+    }
     
     void FixedUpdate()
     {
@@ -97,7 +100,7 @@ public class Player : MonoBehaviour
             GameObject bullet = Instantiate(spell);
             bullet.transform.parent = null;
             bullet.transform.position = transform.position;
-            bullet.GetComponent<BaseBullet>().moveDirection = currentFacing;
+            bullet.GetComponent<BaseBullet>().changeDir(currentFacing);
             lastShootTime = Time.time;
         }
     }

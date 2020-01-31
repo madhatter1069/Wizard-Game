@@ -2,15 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum spellType { def,ice,fire};
+public enum spellType {def, ice , fire, earth, wind, lightning};
 
 
 
 public class BaseBullet : MonoBehaviour
 {
-    public float moveSpeed;
-    public Vector2 moveDirection;
-    public float damage;
+    public float moveSpeed = 6;
+    private Vector2 moveDirection;
+    public float damage = 1;
+    [SerializeField] private spellType element;
 
     float lifeTime;
     float beginTime;
@@ -27,6 +28,10 @@ public class BaseBullet : MonoBehaviour
         Move();
         CheckLifeTime();
         
+    }
+
+    public void changeDir(Vector2 newDir){
+        moveDirection=newDir;
     }
 
     private void Move()

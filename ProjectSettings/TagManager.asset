@@ -3,7 +3,14 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - spellBook
+  - spell
+  - fire
+  - ice
+  - earth
+  - wind
+  - lightning
   layers:
   - Default
   - TransparentFX
