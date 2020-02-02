@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8902036478247879389}
   m_Layer: 0
   m_Name: SpecialEnemy2
-  m_TagString: Untagged
+  m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -100,3 +100,5 @@ MonoBehaviour:
   weakSpellType: 1
   resistedSpellType: 0
   ImmuneSpellType: 0
+  weaknessDamageFactor: 0
+  resistedDamageFactor: 0

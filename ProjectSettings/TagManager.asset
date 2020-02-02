@@ -11,6 +11,7 @@ TagManager:
   - earth
   - wind
   - lightning
+  - enemy
   layers:
   - Default
   - TransparentFX
