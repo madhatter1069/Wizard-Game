@@ -76,7 +76,6 @@ public class Player : MonoBehaviour
         {
             currentFacing = (UpDown + LeftRight).normalized;
             gameObject.transform.Translate(currentFacing * moveSpeed * Time.deltaTime);
-            
         }
     }
 
