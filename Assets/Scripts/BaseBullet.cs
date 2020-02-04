@@ -11,7 +11,7 @@ public class BaseBullet : MonoBehaviour
     public float moveSpeed = 6;
     private Vector2 moveDirection;
     public float damage = 1;
-    [SerializeField] private spellType element;
+    [SerializeField] public spellType element;
 
     float lifeTime;
     float beginTime;
