@@ -104,4 +104,8 @@ public class Player : MonoBehaviour
             lastShootTime = Time.time;
         }
     }
+
+    public void SetID(int ID){
+        playId = ID;
+    }
 }
