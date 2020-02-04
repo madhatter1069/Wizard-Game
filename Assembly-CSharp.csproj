@@ -55,6 +55,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\NavigationHelpers\agent.cs" />
+     <Compile Include="Assets\NavigationHelpers\AgentHelper.cs" />
+     <Compile Include="Assets\NavigationHelpers\NavHelper.cs" />
+     <Compile Include="Assets\NavigationHelpers\navObstacle.cs" />
      <Compile Include="Assets\Scripts\BaseBullet.cs" />
      <Compile Include="Assets\Scripts\BaseEnemy.cs" />
      <Compile Include="Assets\Scripts\CharacterSelect.cs" />
