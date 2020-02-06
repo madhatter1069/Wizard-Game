@@ -851,6 +851,7 @@ GameObject:
   - component: {fileID: 790880708}
   - component: {fileID: 790880710}
   - component: {fileID: 790880709}
+  - component: {fileID: 790880711}
   m_Layer: 0
   m_Name: P2Spell
   m_TagString: Untagged
@@ -874,8 +875,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 379, y: 338}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: 392.9, y: 356}
+  m_SizeDelta: {x: 65, y: 68}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &790880709
 MonoBehaviour:
@@ -895,7 +896,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: -3717512876301743070, guid: 81c6961c00be64e0a970edab387fae05,
+    type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -913,6 +915,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 790880707}
   m_CullTransparentMesh: 0
+--- !u!114 &790880711
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 790880707}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e18bb262990d54a788d9f33f169d24d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  ID: 2
+  spell: {fileID: 0}
 --- !u!1001 &849278538
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1291,6 +1308,8 @@ MonoBehaviour:
   weakSpellType: 1
   resistedSpellType: 0
   ImmuneSpellType: 0
+  weaknessDamageFactor: 0
+  resistedDamageFactor: 0
 --- !u!212 &1283566523
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1793,6 +1812,7 @@ GameObject:
   - component: {fileID: 1793517884}
   - component: {fileID: 1793517886}
   - component: {fileID: 1793517885}
+  - component: {fileID: 1793517887}
   m_Layer: 0
   m_Name: P1Spell
   m_TagString: Untagged
@@ -1816,8 +1836,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -387, y: 341}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: -401, y: 356}
+  m_SizeDelta: {x: 65, y: 68}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1793517885
 MonoBehaviour:
@@ -1837,7 +1857,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: -3717512876301743070, guid: 81c6961c00be64e0a970edab387fae05,
+    type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1855,6 +1876,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1793517883}
   m_CullTransparentMesh: 0
+--- !u!114 &1793517887
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1793517883}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e18bb262990d54a788d9f33f169d24d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  ID: 1
+  spell: {fileID: 0}
 --- !u!1 &2062070469
 GameObject:
   m_ObjectHideFlags: 0

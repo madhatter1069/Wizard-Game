@@ -109,4 +109,8 @@ public class Player : MonoBehaviour
     public void SetID(int ID){
         playId = ID;
     }
+    
+    public GameObject GetSpell(){
+        return spell; 
+    }
 }

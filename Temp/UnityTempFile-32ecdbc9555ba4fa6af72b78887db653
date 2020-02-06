@@ -292,6 +292,10 @@
 /define:ENABLE_LEGACY_INPUT_MANAGER
 /define:CSHARP_7_OR_LATER
 /define:CSHARP_7_3_OR_NEWER
+"Assets/NavigationHelpers/agent.cs"
+"Assets/NavigationHelpers/AgentHelper.cs"
+"Assets/NavigationHelpers/NavHelper.cs"
+"Assets/NavigationHelpers/navObstacle.cs"
 "Assets/Scripts/BaseBullet.cs"
 "Assets/Scripts/BaseEnemy.cs"
 "Assets/Scripts/CharacterSelect.cs"
