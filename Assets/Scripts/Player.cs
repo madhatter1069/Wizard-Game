@@ -5,6 +5,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public int playId;
+    public float health;
     public float moveSpeed = 4;
     [SerializeField] private GameObject spell;
     public float shootCD;
@@ -113,5 +114,28 @@ public class Player : MonoBehaviour
     
     public GameObject GetSpell(){
         return spell; 
+    }
+
+    public bool GetSpellDamage(float damage)
+    {
+        health -= damage;
+        StartCoroutine(DamageAnimation());
+        if (health <= 0)
+        {
+            Destroy(GetComponent<NavHelper>().avatar);
+            Destroy(gameObject);
+            return true;
+        }
+        return false;
+
+    }
+
+
+    private IEnumerator DamageAnimation()
+    {
+        Color color = GetComponent<SpriteRenderer>().color;
+        GetComponent<SpriteRenderer>().color = new Color(color.r, color.g, color.b, 0.7f);
+        yield return new WaitForSeconds(0.1f);
+        GetComponent<SpriteRenderer>().color = color;
     }
 }
