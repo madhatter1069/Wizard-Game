@@ -71,7 +71,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: -7936488368728208126, guid: 81c6961c00be64e0a970edab387fae05,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -144,6 +144,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playId: 0
+  health: 0
   moveSpeed: 4
   spell: {fileID: 3598049212637564882, guid: 32bb955745e50471eb241f883ffdac0c, type: 3}
   shootCD: 0.5

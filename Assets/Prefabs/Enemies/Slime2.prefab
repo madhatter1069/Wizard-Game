@@ -70,7 +70,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: -4510129588611217917, guid: 81c6961c00be64e0a970edab387fae05,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -97,12 +97,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyId: 0
   health: 100
-  targetPlayer: {fileID: 0}
+  attackDamage: 0
   weakSpellType: 1
   resistedSpellType: 0
-  ImmuneSpellType: 0
+  immuneSpellType: 0
   weaknessDamageFactor: 0
   resistedDamageFactor: 0
+  targetingRange: 0
+  loseTargetingRange: 0
+  attackRange: 0
+  attackCD: 0
+  targetPlayer: {fileID: 0}
 --- !u!65 &-73988345492868053
 BoxCollider:
   m_ObjectHideFlags: 0

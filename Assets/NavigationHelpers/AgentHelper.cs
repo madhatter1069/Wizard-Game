@@ -37,9 +37,15 @@ public class AgentHelper : MonoBehaviour
         {
             //do not move when attacking
             if (!_thisEnemy.isAttacking())
+            {
+                _agent.enabled = true;
                 _agent.SetDestination(_targetAvatar.transform.position);
+            }
+                
             else
-                _agent.SetDestination(avatar.transform.position);
+            {
+                _agent.enabled = false;
+            }
         }
 
         //update this position in terms of avatar's position
@@ -58,5 +64,13 @@ public class AgentHelper : MonoBehaviour
         {
             _targetAvatar = null;
         }
+    }
+
+    //helpers
+    public void ResetTarget()
+    {
+        _targetPlayer = null;
+        _targetAvatar = null;
+        _agent.enabled = false;
     }
 }

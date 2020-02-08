@@ -72,7 +72,10 @@ public class BaseEnemy : MonoBehaviour
                     _isMoving = false; //stop moving animation
                     StartCoroutine(AttackAnimation()); //animate before applying damage in case player is destoryed(dead)
                     if (targetPlayer.GetComponent<Player>().GetSpellDamage(attackDamage))
+                    {
+                        GetComponent<AgentHelper>().ResetTarget();
                         targetPlayer = null;
+                    }
                     
                 }
             }
@@ -86,7 +89,7 @@ public class BaseEnemy : MonoBehaviour
         {
             GameObject ob = collision.gameObject;
             applySpell(ob.GetComponent<BaseBullet>().element, ob.GetComponent<BaseBullet>().damage);
-            Destroy(ob);
+            Destroy(ob); //destroy spell bullet after collision;
         }
     }
 
