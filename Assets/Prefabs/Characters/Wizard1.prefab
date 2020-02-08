@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4908005719048309905}
   - component: {fileID: 4908005719048309906}
   - component: {fileID: 4908005719048309907}
+  - component: {fileID: 7873669372300189234}
   m_Layer: 0
   m_Name: Wizard1
   m_TagString: Player
@@ -147,3 +148,31 @@ MonoBehaviour:
   moveSpeed: 4
   spell: {fileID: 3598049212637564882, guid: 32bb955745e50471eb241f883ffdac0c, type: 3}
   shootCD: 0.5
+--- !u!114 &7873669372300189234
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4908005719048309996}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13e746f3186a0425ebbfa86f26a8e4a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 4
+  numOfHearts: 4
+  hearts:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  fullHeart: {fileID: -5238001447702341766, guid: 81c6961c00be64e0a970edab387fae05,
+    type: 3}
+  Heart34: {fileID: -8843004621505269269, guid: 81c6961c00be64e0a970edab387fae05,
+    type: 3}
+  HalfHeart: {fileID: 1276007131013944471, guid: 81c6961c00be64e0a970edab387fae05,
+    type: 3}
+  QuartHeart: {fileID: -2312312127466242145, guid: 81c6961c00be64e0a970edab387fae05,
+    type: 3}
+  emptyHeart: {fileID: 21300000, guid: f7f1d069a34fd4dae98fc696cb6e0235, type: 3}

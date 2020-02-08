@@ -12,8 +12,8 @@ public class BaseEnemy : MonoBehaviour
     public spellType weakSpellType;
     public spellType resistedSpellType;
     public spellType ImmuneSpellType;
-    public float weaknessDamageFactor;
-    public float resistedDamageFactor;
+    public float weaknessDamageFactor = 2f;
+    public float resistedDamageFactor = .5f;
 
     void Start()
     {

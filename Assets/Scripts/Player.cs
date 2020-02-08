@@ -101,6 +101,7 @@ public class Player : MonoBehaviour
             GameObject bullet = Instantiate(spell);
             bullet.transform.parent = null;
             bullet.transform.position = transform.position;
+            bullet.transform.rotation = transform.rotation;
             bullet.GetComponent<BaseBullet>().changeDir(currentFacing);
             lastShootTime = Time.time;
         }
