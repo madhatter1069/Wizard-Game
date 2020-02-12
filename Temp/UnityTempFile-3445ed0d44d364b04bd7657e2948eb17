@@ -296,7 +296,6 @@
 "Assets/Scripts/BaseBullet.cs"
 "Assets/Scripts/BaseEnemy.cs"
 "Assets/Scripts/CharacterSelect.cs"
-"Assets/Scripts/getComponent.cs"
 "Assets/Scripts/MainMenu.cs"
 "Assets/Scripts/PickableSpell.cs"
 "Assets/Scripts/Player.cs"

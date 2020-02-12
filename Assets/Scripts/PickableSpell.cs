@@ -19,7 +19,7 @@ public class PickableSpell : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        Animation();
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -31,4 +31,13 @@ public class PickableSpell : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+
+
+    private void Animation()
+    {
+        transform.Rotate(Vector3.forward, Time.deltaTime * 100);
+        transform.Translate(Vector3.up * Mathf.Sin(Time.time*3) / 200f,Space.World);
+    }
 }
+

@@ -1,21 +1,23 @@
 ﻿<Properties StartupConfiguration="{F33EBD72-79F1-4FCF-5DB9-CA331A09EC7B}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/BaseEnemy.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/NavigationHelpers/AgentHelper.cs">
     <Files>
       <File FileName="Assets/Scripts/BaseBullet.cs" Line="13" Column="25" />
-      <File FileName="Assets/Scripts/BaseEnemy.cs" Line="76" Column="28" />
-      <File FileName="Assets/Scripts/PickableSpell.cs" />
-      <File FileName="Assets/Scripts/Player.cs" Line="124" Column="43" />
-      <File FileName="Assets/NavigationHelpers/AgentHelper.cs" Line="74" Column="32" />
+      <File FileName="Assets/Scripts/BaseEnemy.cs" Line="38" Column="9" />
+      <File FileName="Assets/Scripts/PickableSpell.cs" Line="40" Column="85" />
+      <File FileName="Assets/Scripts/Player.cs" />
+      <File FileName="Assets/NavigationHelpers/AgentHelper.cs" Line="52" Column="1" />
+      <File FileName="Assets/NavigationHelpers/NavHelper.cs" Line="28" Column="1" />
+      <File FileName="Assets/NavigationHelpers/NavHelper.cs" Line="28" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Wizard-Game" expanded="True">
             <Node name="Assets" expanded="True">
-              <Node name="NavigationHelpers" expanded="True" />
-              <Node name="Scripts" expanded="True">
-                <Node name="BaseEnemy.cs" selected="True" />
+              <Node name="NavigationHelpers" expanded="True">
+                <Node name="AgentHelper.cs" selected="True" />
               </Node>
+              <Node name="Scripts" expanded="True" />
             </Node>
           </Node>
         </State>
@@ -24,7 +26,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="1aa9d9cf-2467-451f-8d56-a889cdf08d43" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="fb189d3b-0d7e-4aa7-bf6e-ddf23f535677" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

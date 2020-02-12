@@ -56,7 +56,10 @@ public class BaseEnemy : MonoBehaviour
             else
                 GetComponent<SpriteRenderer>().flipX = false;
         }
-
+        else
+        {
+            InPlaceAnimation();
+        }
         
     }
 
@@ -139,6 +142,11 @@ public class BaseEnemy : MonoBehaviour
                 return;
             }
         }
+    }
+
+    private void InPlaceAnimation()
+    {
+        transform.Translate(Vector3.up * Mathf.Sin(Time.time * 7) / 100f, Space.World);
     }
 
 
