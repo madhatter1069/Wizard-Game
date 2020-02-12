@@ -3,7 +3,9 @@ guid: d801e9014b0094b48a44af603e6c35bf
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - spellProjectile: {fileID: 3598049212637564882, guid: 32bb955745e50471eb241f883ffdac0c,
+      type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

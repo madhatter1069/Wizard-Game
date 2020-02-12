@@ -78,6 +78,9 @@
 /reference:"Library/ScriptAssemblies/Unity.2D.Tilemap.Editor.dll"
 /reference:"Library/ScriptAssemblies/Unity.TextMeshPro.dll"
 /reference:"Library/ScriptAssemblies/UnityEditor.UI.dll"
+/reference:"/Applications/Unity/Hub/Editor/2019.2.17f1/PlaybackEngines/AppleTVSupport/UnityEditor.iOS.Extensions.Xcode.dll"
+/reference:"/Applications/Unity/Hub/Editor/2019.2.17f1/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll"
+/reference:"/Applications/Unity/Hub/Editor/2019.2.17f1/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Common.dll"
 /reference:"/Applications/Unity/Hub/Editor/2019.2.17f1/Unity.app/Contents/NetStandard/ref/2.0.0/netstandard.dll"
 /reference:"/Applications/Unity/Hub/Editor/2019.2.17f1/Unity.app/Contents/NetStandard/compat/2.0.0/shims/netstandard/Microsoft.Win32.Primitives.dll"
 /reference:"/Applications/Unity/Hub/Editor/2019.2.17f1/Unity.app/Contents/NetStandard/compat/2.0.0/shims/netstandard/System.AppContext.dll"
@@ -279,7 +282,6 @@
 /define:ENABLE_UNITY_COLLECTIONS_CHECKS
 /define:ENABLE_BURST_AOT
 /define:UNITY_TEAM_LICENSE
-/define:ENABLE_VSTU
 /define:ENABLE_CUSTOM_RENDER_TEXTURE
 /define:ENABLE_DIRECTOR
 /define:ENABLE_LOCALIZATION
