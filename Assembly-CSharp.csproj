@@ -61,6 +61,7 @@
      <Compile Include="Assets\Scripts\BaseBullet.cs" />
      <Compile Include="Assets\Scripts\BaseEnemy.cs" />
      <Compile Include="Assets\Scripts\CharacterSelect.cs" />
+     <Compile Include="Assets\Scripts\Health.cs" />
      <Compile Include="Assets\Scripts\MainMenu.cs" />
      <Compile Include="Assets\Scripts\PickableSpell.cs" />
      <Compile Include="Assets\Scripts\Player.cs" />
