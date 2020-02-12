@@ -50,3 +50,21 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: BlackBackground
+    uniqueID: 2851315769
+    locked: 0
+  - name: Walls
+    uniqueID: 284768721
+    locked: 0
+  - name: AestheticObjects
+    uniqueID: 2724032063
+    locked: 0
+  - name: Enemies
+    uniqueID: 1830632579
+    locked: 0
+  - name: Projectiles
+    uniqueID: 3602370291
+    locked: 0
+  - name: Players
+    uniqueID: 1897192633
+    locked: 0
