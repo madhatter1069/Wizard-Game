@@ -44,4 +44,11 @@ public class BaseBullet : MonoBehaviour
         if (Time.time - beginTime > lifeTime)
             Destroy(gameObject);
     }
+    void OnTriggerEnter2D(Collider2D other)
+    { 
+        if (other.gameObject.CompareTag("floor"))
+        {
+            Destroy(gameObject);
+        }
+    }
 }

@@ -13,6 +13,7 @@ TagManager:
   - lightning
   - characterSelect
   - enemy
+  - floor
   layers:
   - Default
   - TransparentFX

@@ -24,7 +24,6 @@ public class PickableSpell : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     { 
-        //Debug.Log("Spell select");
         if (other.gameObject.CompareTag("Player"))
         {
             other.gameObject.GetComponent<Player>().ChangeSpell(spellProjectile);

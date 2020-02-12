@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6593692358944198228}
   - component: {fileID: 6593692358944198229}
   - component: {fileID: 6593692358944198226}
+  - component: {fileID: 1269185855942978638}
   m_Layer: 0
   m_Name: Wizard2
   m_TagString: Player
@@ -122,10 +123,10 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 1
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 0.0001
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_AngularDrag: 0
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -148,3 +149,28 @@ MonoBehaviour:
   moveSpeed: 4
   spell: {fileID: 3598049212637564882, guid: 32bb955745e50471eb241f883ffdac0c, type: 3}
   shootCD: 0.5
+--- !u!114 &1269185855942978638
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6593692358944198227}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13e746f3186a0425ebbfa86f26a8e4a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 4
+  numOfHearts: 4
+  lastHeart: 0
+  hearts: []
+  fullHeart: {fileID: 5869410648539813710, guid: a80c4b32776bbb84e98beea2d7a5c82d,
+    type: 3}
+  Heart34: {fileID: 8533468016130296359, guid: a80c4b32776bbb84e98beea2d7a5c82d, type: 3}
+  HalfHeart: {fileID: -7219173596208366012, guid: a80c4b32776bbb84e98beea2d7a5c82d,
+    type: 3}
+  QuartHeart: {fileID: -1611503947219306815, guid: a80c4b32776bbb84e98beea2d7a5c82d,
+    type: 3}
+  emptyHeart: {fileID: 790267400001296970, guid: a80c4b32776bbb84e98beea2d7a5c82d,
+    type: 3}

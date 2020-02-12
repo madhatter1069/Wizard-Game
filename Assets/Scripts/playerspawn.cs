@@ -25,7 +25,7 @@ public class playerspawn : MonoBehaviour
         foreach (object o in obj)
         {
             GameObject g = (GameObject) o;
-            if (g.name == "Canvas"){
+            if (g.name == "health display"){
                 for (int i = 0; i < g.transform.childCount; i++)
                 {
                     GameObject spellDisplay = g.transform.GetChild(i).gameObject;

@@ -27,7 +27,7 @@ public Sprite emptyHeart;
         foreach (object o in obj)
         {
             GameObject g = (GameObject) o;
-            if (g.name == "Canvas"){
+            if (g.name == "health display"){
                 ID = transform.GetComponent<Player>().playId;
                 for (int i = 0; i < g.transform.childCount; i++)
                 {
