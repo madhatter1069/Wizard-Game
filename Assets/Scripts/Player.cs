@@ -7,16 +7,26 @@ public class Player : MonoBehaviour
     public int playId;
     public float health;
     public float moveSpeed = 4;
+    public float bulletSpeed = 6;
     [SerializeField] private GameObject spell;
     public float shootCD;
     float lastShootTime;
 
     private Vector2 currentFacing;
 
+    public Animator anim;
+
     void Start()
     {
         currentFacing = Vector2.down;
         lastShootTime = Time.time;
+
+        anim = GetComponent<Animator>();
+
+        anim.SetBool("Walking", false);
+        anim.SetBool("Attacking", false);
+        anim.SetInteger("Vertical", 0);
+        anim.SetInteger("Horizontal", 1);
     }
 
     public void ChangeSpell(GameObject Newspell){
@@ -57,27 +67,43 @@ public class Player : MonoBehaviour
         {
             UpDown = Vector2.up;
             getKey = true;
+            anim.SetBool("Walking", true);
+            anim.SetInteger("Vertical", 1);
+            //anim.SetInteger("Horizontal", 0);
         }
         if (Input.GetKey(down))
         {
             UpDown = Vector2.down;
             getKey = true;
+            anim.SetBool("Walking", true);
+            anim.SetInteger("Vertical", 0);
+            //anim.SetInteger("Horizontal", 1);
         }
         if (Input.GetKey(left))
         {
             LeftRight = Vector2.left;
             getKey = true;
+            anim.SetBool("Walking", true);
+            anim.SetInteger("Vertical", 0);
+            anim.SetInteger("Horizontal", -1);
         }
         if (Input.GetKey(right))
         {
             LeftRight = Vector2.right;
             getKey = true;
+            anim.SetBool("Walking", true);
+            anim.SetInteger("Vertical", 0);
+            anim.SetInteger("Horizontal", 1);
         }
         if (getKey)
         {
             currentFacing = (UpDown + LeftRight).normalized;
             gameObject.transform.Translate(currentFacing * moveSpeed * Time.deltaTime);
-            
+            //Debug.Log(currentFacing);
+        }
+        if (Input.GetKey(up)==false && Input.GetKey(down) == false && Input.GetKey(left) == false && Input.GetKey(right) == false)
+        {
+            anim.SetBool("Walking", false);
         }
     }
 
@@ -99,11 +125,20 @@ public class Player : MonoBehaviour
 
         if (Input.GetKey(shootKey) && Time.time-lastShootTime > shootCD)
         {
-            GameObject bullet = Instantiate(spell);
+            anim.SetBool("Attacking", true);
+            //GameObject bullet = Instantiate(spell);
+            GameObject bullet = Instantiate(spell, transform.position, transform.rotation);
+            Rigidbody2D bulletRb = bullet.GetComponent<Rigidbody2D>();
             bullet.transform.parent = null;
-            bullet.transform.position = transform.position;
+            //bullet.transform.position = transform.position;
             bullet.GetComponent<BaseBullet>().changeDir(currentFacing);
             lastShootTime = Time.time;
+
+            bulletRb.velocity = currentFacing * bulletSpeed;
+        }
+        if (Input.GetKey(shootKey) == false)
+        {
+            anim.SetBool("Attacking", false);
         }
     }
 

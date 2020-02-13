@@ -22,8 +22,8 @@ public class CharacterSelect : MonoBehaviour
     }
 
     public void PlayGame(){
-        SceneManager.LoadScene("SampleScene");
-
+        //SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("ManuallyGeneratedLevel1");
     }
 
     public void PickFirstPlayer(int ind){
