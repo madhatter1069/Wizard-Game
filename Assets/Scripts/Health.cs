@@ -81,6 +81,10 @@ public Sprite emptyHeart;
                 hearts[lastHeart].sprite = QuartHeart;
                 health--;
             }
+            else if (hearts[lastHeart].sprite == QuartHeart && lastHeart == 0){
+                health--;
+                Destroy(gameObject);
+            }
             else if (hearts[lastHeart].sprite == QuartHeart){
                 hearts[lastHeart].sprite = emptyHeart;
                 --lastHeart;
