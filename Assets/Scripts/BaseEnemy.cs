@@ -8,7 +8,7 @@ public class BaseEnemy : MonoBehaviour
 {
     public float enemyId;
     public float health;
-    public float attackDamage;
+    public int attackDamage;
  
     public spellType weakSpellType;
     public spellType resistedSpellType;

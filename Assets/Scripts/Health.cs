@@ -69,27 +69,27 @@ public Sprite emptyHeart;
     }
     void OnCollisionEnter2D(Collision2D col){
         if(col.gameObject.CompareTag("enemy")){
+            gameObject.GetComponent<Player>().GetSpellDamage(1);
+        }
+    }
+
+    public void doDamage(int damage){
+        for (int i = 0; i < damage; i++)
+        {
+            health--;
             if (hearts[lastHeart].sprite == fullHeart){
                 hearts[lastHeart].sprite = Heart34;
-                health--;
             }
             else if (hearts[lastHeart].sprite == Heart34){
                 hearts[lastHeart].sprite = HalfHeart;
-                health--;
             }
             else if (hearts[lastHeart].sprite == HalfHeart){
                 hearts[lastHeart].sprite = QuartHeart;
-                health--;
-            }
-            else if (hearts[lastHeart].sprite == QuartHeart && lastHeart == 0){
-                health--;
-                Destroy(gameObject);
             }
             else if (hearts[lastHeart].sprite == QuartHeart){
                 hearts[lastHeart].sprite = emptyHeart;
                 --lastHeart;
-                health--;
-            }
+            } 
         }
     }
 }

@@ -146,7 +146,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playId: 0
-  health: 0
+  health: 16
   moveSpeed: 4
   bulletSpeed: 6
   spell: {fileID: 3598049212637564882, guid: 32bb955745e50471eb241f883ffdac0c, type: 3}

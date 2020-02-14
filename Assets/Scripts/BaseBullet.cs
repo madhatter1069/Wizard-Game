@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum spellType {def, ice , fire, earth, wind, lightning};
+public enum spellType {def, ice , fire, earth, wind, lightning, none};
 
 
 

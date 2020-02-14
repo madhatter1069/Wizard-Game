@@ -18,6 +18,7 @@ public class Player : MonoBehaviour
 
     void Start()
     {
+        SetPlayer(gameObject);
         currentFacing = Vector2.down;
         lastShootTime = Time.time;
 
@@ -150,13 +151,14 @@ public class Player : MonoBehaviour
         return spell; 
     }
 
-    public bool GetSpellDamage(float damage)
+    public bool GetSpellDamage(int damage)
     {
         health -= damage;
+        gameObject.GetComponent<Health>().doDamage(damage);
         StartCoroutine(DamageAnimation());
         if (health <= 0)
         {
-            Destroy(GetComponent<NavHelper>().avatar);
+            //Destroy(GetComponent<NavHelper>().avatar);
             Destroy(gameObject);
             return true;
         }
@@ -171,5 +173,24 @@ public class Player : MonoBehaviour
         GetComponent<SpriteRenderer>().color = new Color(color.r, color.g, color.b, 0.7f);
         yield return new WaitForSeconds(0.1f);
         GetComponent<SpriteRenderer>().color = color;
+    }
+
+    void SetPlayer(GameObject plr){
+        object[] obj = GameObject.FindObjectsOfType<GameObject>();
+        foreach (object o in obj)
+        {
+            GameObject g = (GameObject) o;
+            if (g.name == "health display"){
+                for (int i = 0; i < g.transform.childCount; i++)
+                {
+                    GameObject spellDisplay = g.transform.GetChild(i).gameObject;
+                    
+                    if ( spellDisplay.name == "P" + (playId+1).ToString() + "Spell" ){
+                        spellDisplay.GetComponent<Spell>().SetPlay(plr);
+                    }
+
+                }
+            }
+        }
     }
 }

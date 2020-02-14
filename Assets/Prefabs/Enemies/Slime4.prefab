@@ -98,11 +98,11 @@ MonoBehaviour:
   enemyId: 0
   health: 100
   attackDamage: 0
-  weakSpellType: 1
-  resistedSpellType: 0
-  immuneSpellType: 0
-  weaknessDamageFactor: 0
-  resistedDamageFactor: 0
+  weakSpellType: 5
+  resistedSpellType: 2
+  immuneSpellType: 3
+  weaknessDamageFactor: 2
+  resistedDamageFactor: 0.5
   targetingRange: 0
   loseTargetingRange: 0
   attackRange: 0

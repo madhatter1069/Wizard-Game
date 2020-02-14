@@ -98,12 +98,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyId: 0
   health: 100
-  attackDamage: 0
-  weakSpellType: 1
+  attackDamage: 2
+  weakSpellType: 3
   resistedSpellType: 0
-  immuneSpellType: 0
-  weaknessDamageFactor: 0
-  resistedDamageFactor: 0
+  immuneSpellType: 4
+  weaknessDamageFactor: 2
+  resistedDamageFactor: 0.5
   targetingRange: 5
   loseTargetingRange: 3
   attackRange: 2
