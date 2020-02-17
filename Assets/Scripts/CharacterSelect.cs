@@ -9,21 +9,11 @@ public class CharacterSelect : MonoBehaviour
     public GameObject selectchar;
 
     private void Start(){
-        //characterList = new GameObject [4];
-        /*int index = 0;
-        for (int i = 0; i<transform.childCount; ++i){
-            if (transform.GetChild(i).gameObject.tag == "characterSelect"){
-                characterList[index] = (transform.GetChild(i).GetChild(1).gameObject);
-                index++;
-            }
-        }*/
-        //player1 = characterList[PlayerPrefs.GetInt("Player1")];
-        //player2 = characterList[PlayerPrefs.GetInt("Player2")];
+        
     }
 
     public void PlayGame(){
-        //SceneManager.LoadScene("SampleScene");
-        SceneManager.LoadScene("ManuallyGeneratedLevel1");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
     public void PickFirstPlayer(int ind){

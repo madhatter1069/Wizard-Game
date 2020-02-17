@@ -160,6 +160,15 @@ public class Player : MonoBehaviour
         {
             //Destroy(GetComponent<NavHelper>().avatar);
             Destroy(gameObject);
+            object[] obj = GameObject.FindObjectsOfType<GameObject>();
+            foreach (object o in obj)
+            {
+                GameObject g = (GameObject) o;
+                if (g.name == "GameManager"){
+                    if (playId == 0){g.GetComponent<GameManager>().p1health = 0;}
+                    if (playId == 1){g.GetComponent<GameManager>().p2health = 0;}
+                }
+            }
             return true;
         }
         return false;

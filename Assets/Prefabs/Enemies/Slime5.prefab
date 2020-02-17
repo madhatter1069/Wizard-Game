@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 9213337145022992194}
   - component: {fileID: 1518380971496285383}
   - component: {fileID: 833025734101711704}
-  - component: {fileID: -6057186319405725412}
+  - component: {fileID: -1483748268367487763}
   m_Layer: 0
   m_Name: Slime5
   m_TagString: enemy
@@ -97,27 +97,40 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyId: 0
   health: 100
-  attackDamage: 0
+  attackDamage: 2
   weakSpellType: 4
   resistedSpellType: 3
   immuneSpellType: 5
   weaknessDamageFactor: 2
   resistedDamageFactor: 0.5
-  targetingRange: 0
-  loseTargetingRange: 0
-  attackRange: 0
-  attackCD: 0
+  targetingRange: 2
+  loseTargetingRange: 3
+  attackRange: 2
+  attackCD: 2
   targetPlayer: {fileID: 0}
---- !u!65 &-6057186319405725412
-BoxCollider:
+--- !u!61 &-1483748268367487763
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1169576111123225252}
+  m_Enabled: 1
+  m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.9375, y: 0.9375}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.9375, y: 0.9375, z: 0.2}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0.9375, y: 0.9375}
+  m_EdgeRadius: 0

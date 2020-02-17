@@ -37,6 +37,9 @@ public class BaseEnemy : MonoBehaviour
         Attack(); //attack() should be called before move()
         Move();
         CheckTargetPlayer();
+        if (health <= 0){
+            Destroy(gameObject);
+        }
         
     }
 

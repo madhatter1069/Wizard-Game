@@ -11,14 +11,13 @@ GameObject:
   - component: {fileID: 6564760375621974808}
   - component: {fileID: 6564760375621974815}
   - component: {fileID: 6564760375621974814}
-  - component: {fileID: 6564760376888545446}
   - component: {fileID: 5159173950254245953}
   m_Layer: 0
   m_Name: Slime1
   m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 8
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &6564760375621974808
 Transform:
@@ -104,25 +103,11 @@ MonoBehaviour:
   immuneSpellType: 4
   weaknessDamageFactor: 2
   resistedDamageFactor: 0.5
-  targetingRange: 5
-  loseTargetingRange: 3
-  attackRange: 2
+  targetingRange: 4
+  loseTargetingRange: 5
+  attackRange: 4
   attackCD: 1
   targetPlayer: {fileID: 0}
---- !u!114 &6564760376888545446
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6564760375621974813}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fde6a9ddec3e7420691059c0b2e0c237, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  avatar: {fileID: 0}
-  planeYOffset: 10
 --- !u!61 &5159173950254245953
 BoxCollider2D:
   m_ObjectHideFlags: 0
