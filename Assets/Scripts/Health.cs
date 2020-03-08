@@ -74,22 +74,24 @@ public Sprite emptyHeart;
     }
 
     public void doDamage(int damage){
-        for (int i = 0; i < damage; i++)
-        {
-            health--;
-            if (hearts[lastHeart].sprite == fullHeart){
-                hearts[lastHeart].sprite = Heart34;
+        if (health>0){
+            for (int i = 0; i < damage; i++)
+            {
+                health--;
+                if (hearts[lastHeart].sprite == fullHeart){
+                    hearts[lastHeart].sprite = Heart34;
+                }
+                else if (hearts[lastHeart].sprite == Heart34){
+                    hearts[lastHeart].sprite = HalfHeart;
+                }
+                else if (hearts[lastHeart].sprite == HalfHeart){
+                    hearts[lastHeart].sprite = QuartHeart;
+                }
+                else if (hearts[lastHeart].sprite == QuartHeart){
+                    hearts[lastHeart].sprite = emptyHeart;
+                    --lastHeart;
+                } 
             }
-            else if (hearts[lastHeart].sprite == Heart34){
-                hearts[lastHeart].sprite = HalfHeart;
-            }
-            else if (hearts[lastHeart].sprite == HalfHeart){
-                hearts[lastHeart].sprite = QuartHeart;
-            }
-            else if (hearts[lastHeart].sprite == QuartHeart){
-                hearts[lastHeart].sprite = emptyHeart;
-                --lastHeart;
-            } 
         }
     }
 }

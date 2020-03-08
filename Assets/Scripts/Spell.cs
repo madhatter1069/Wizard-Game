@@ -16,8 +16,10 @@ public class Spell : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        if (player != null){
         spell = player.GetComponent<Player>().GetSpell();
         gameObject.GetComponent<Image>().sprite = spell.GetComponent<SpriteRenderer> ().sprite;
+        }
     }
 
     public void SetPlay(GameObject playr){
