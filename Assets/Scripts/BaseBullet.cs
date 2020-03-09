@@ -78,6 +78,7 @@ public class BaseBullet : MonoBehaviour
     void Update()
     {
         //Move();
+        transform.Translate(transform.position.x,0, transform.position.y);
         CheckLifeTime();
         
     }

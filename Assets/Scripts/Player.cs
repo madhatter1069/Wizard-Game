@@ -129,13 +129,13 @@ public class Player : MonoBehaviour
         {
             anim.SetBool("Attacking", true);
             //GameObject bullet = Instantiate(spell);
-            GameObject bullet = Instantiate(spell, transform.position, transform.rotation);
+            GameObject bullet = Instantiate(spell, transform.position, new Vector3(90,0,0));
             Rigidbody2D bulletRb = bullet.GetComponent<Rigidbody2D>();
-            bullet.transform.parent = null;
+            //bullet.transform.parent = null;
             //bullet.transform.position = transform.position;
+            Vector3 facing = new Vector3(currentFacing.x, 0, currentFacing.y);
             bullet.GetComponent<BaseBullet>().changeDir(currentFacing);
             lastShootTime = Time.time;
-
             bulletRb.velocity = currentFacing * bulletSpeed;
         }
         if (Input.GetKey(shootKey) == false)
@@ -158,7 +158,7 @@ public class Player : MonoBehaviour
         gameObject.GetComponent<Health>().doDamage(damage);
         if (health <= 0)
         {
-            //Destroy(GetComponent<NavHelper>().avatar);
+            //GetComponent<NavHelper>().avatar.SetActive(false);
             //Destroy(gameObject);
             gameObject.SetActive(false);
             transform.position = spawnPos;
