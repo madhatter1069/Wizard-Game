@@ -78,7 +78,8 @@ public class BaseBullet : MonoBehaviour
     void Update()
     {
         //Move();
-        transform.Translate(transform.position.x,0, transform.position.y);
+        //float newY = transform.position.y;
+        //transform.position = new Vector3(transform.position.x,0.1f, transform.position.z+newY);
         CheckLifeTime();
         
     }
