@@ -71,7 +71,7 @@ public class BaseBullet : MonoBehaviour
             rotation = 0f;
         }
 
-        transform.transform.Rotate(0f, 0f, rotation, Space.World);
+        transform.transform.Rotate(0f, 0f, rotation, Space.Self);
     }
 
     // Update is called once per frame
@@ -79,7 +79,7 @@ public class BaseBullet : MonoBehaviour
     {
         //Move();
         //float newY = transform.position.y;
-        //transform.position = new Vector3(transform.position.x,0.1f, transform.position.z+newY);
+        transform.position = new Vector3(transform.position.x,transform.position.y, transform.position.y);
         CheckLifeTime();
         
     }
