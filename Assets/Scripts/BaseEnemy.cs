@@ -76,7 +76,7 @@ public class BaseEnemy : MonoBehaviour
                     StartCoroutine(AttackAnimation()); //animate before applying damage in case player is destoryed(dead)
                     if (targetPlayer.GetComponent<Player>().GetSpellDamage(attackDamage))
                     {
-                        GetComponent<AgentHelper>().ResetTarget();
+                        GetComponent<targetPlayer>().ResetTarget();
                         targetPlayer = null;
                     }
                     

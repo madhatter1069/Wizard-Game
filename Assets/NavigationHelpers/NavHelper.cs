@@ -3,31 +3,25 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-[ExecuteInEditMode]
+//[ExecuteInEditMode]
 public class NavHelper : MonoBehaviour
 {
     public GameObject avatar;
-    public float planeYOffset;
     // Start is called before the first frame update
     void Start()
     {
-        
+        avatar.transform.position = new Vector3(transform.position.x,
+                                                avatar.transform.position.y,
+                                                transform.position.z);
     }
 
     // Update is called once per frame
     void Update()
     {
-        
-        
+        avatar.transform.position = new Vector3(transform.position.x,
+                                                avatar.transform.position.y,
+                                                transform.position.z); 
     }
-
-
-    void LateUpdate()
-    {
-        //update avatar's position in terms of current position
-        avatar.transform.position = new Vector3(transform.position.x, 0, transform.position.y + planeYOffset);
-    }
-
 }
 
 

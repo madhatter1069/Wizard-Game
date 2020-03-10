@@ -55,9 +55,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\NavigationHelpers\AgentHelper.cs" />
      <Compile Include="Assets\NavigationHelpers\NavHelper.cs" />
-     <Compile Include="Assets\NavigationHelpers\navObstacle.cs" />
+     <Compile Include="Assets\NavigationHelpers\nope\AgentHelper.cs" />
+     <Compile Include="Assets\NavigationHelpers\nope\AgentScript.cs" />
+     <Compile Include="Assets\NavigationHelpers\nope\navObstacle.cs" />
+     <Compile Include="Assets\NavigationHelpers\targetPlayer.cs" />
      <Compile Include="Assets\Scripts\BaseBullet.cs" />
      <Compile Include="Assets\Scripts\BaseEnemy.cs" />
      <Compile Include="Assets\Scripts\CharacterSelect.cs" />

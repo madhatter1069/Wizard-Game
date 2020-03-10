@@ -11,6 +11,7 @@ public class Player : MonoBehaviour
     [SerializeField] private GameObject spell;
     public float shootCD;
     float lastShootTime;
+    private Vector2 spawnPos;
 
     private Vector2 currentFacing;
 
@@ -18,6 +19,7 @@ public class Player : MonoBehaviour
 
     void Start()
     {
+        spawnPos = transform.position;
         SetPlayer(gameObject);
         currentFacing = Vector2.down;
         lastShootTime = Time.time;
@@ -34,7 +36,7 @@ public class Player : MonoBehaviour
         spell=Newspell;
     }
     
-    void FixedUpdate()
+    void Update()
     {
         Move();
         Shoot();
@@ -100,7 +102,6 @@ public class Player : MonoBehaviour
         {
             currentFacing = (UpDown + LeftRight).normalized;
             gameObject.transform.Translate(currentFacing * moveSpeed * Time.deltaTime);
-            //Debug.Log(currentFacing);
         }
         if (Input.GetKey(up)==false && Input.GetKey(down) == false && Input.GetKey(left) == false && Input.GetKey(right) == false)
         {
@@ -128,13 +129,13 @@ public class Player : MonoBehaviour
         {
             anim.SetBool("Attacking", true);
             //GameObject bullet = Instantiate(spell);
-            GameObject bullet = Instantiate(spell, transform.position, transform.rotation);
+            GameObject bullet = Instantiate(spell, transform.position, new Vector3(90,0,0));
             Rigidbody2D bulletRb = bullet.GetComponent<Rigidbody2D>();
-            bullet.transform.parent = null;
+            //bullet.transform.parent = null;
             //bullet.transform.position = transform.position;
+            Vector3 facing = new Vector3(currentFacing.x, 0, currentFacing.y);
             bullet.GetComponent<BaseBullet>().changeDir(currentFacing);
             lastShootTime = Time.time;
-
             bulletRb.velocity = currentFacing * bulletSpeed;
         }
         if (Input.GetKey(shootKey) == false)
@@ -155,12 +156,21 @@ public class Player : MonoBehaviour
     {
         health -= damage;
         gameObject.GetComponent<Health>().doDamage(damage);
-        StartCoroutine(DamageAnimation());
         if (health <= 0)
         {
-            //Destroy(GetComponent<NavHelper>().avatar);
-            Destroy(gameObject);
-            object[] obj = GameObject.FindObjectsOfType<GameObject>();
+            //GetComponent<NavHelper>().avatar.SetActive(false);
+            //Destroy(gameObject);
+            gameObject.SetActive(false);
+            transform.position = spawnPos;
+            playerdead();
+            return true;
+        }
+        StartCoroutine(DamageAnimation());
+        return false;
+
+    }
+    void playerdead(){
+        object[] obj = GameObject.FindObjectsOfType<GameObject>();
             foreach (object o in obj)
             {
                 GameObject g = (GameObject) o;
@@ -169,12 +179,7 @@ public class Player : MonoBehaviour
                     if (playId == 1){g.GetComponent<GameManager>().p2health = 0;}
                 }
             }
-            return true;
-        }
-        return false;
-
     }
-
 
     private IEnumerator DamageAnimation()
     {
