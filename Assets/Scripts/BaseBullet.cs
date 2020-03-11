@@ -71,15 +71,13 @@ public class BaseBullet : MonoBehaviour
             rotation = 0f;
         }
 
-        transform.transform.Rotate(0f, 0f, rotation, Space.Self);
+        transform.transform.Rotate(0f, 0f, rotation, Space.World);
     }
 
     // Update is called once per frame
     void Update()
     {
         //Move();
-        //float newY = transform.position.y;
-        transform.position = new Vector3(transform.position.x,transform.position.y, transform.position.y);
         CheckLifeTime();
         
     }

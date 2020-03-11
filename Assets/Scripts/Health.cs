@@ -74,9 +74,9 @@ public Sprite emptyHeart;
     }
 
     public void doDamage(int damage){
-        if (health>0){
-            for (int i = 0; i < damage; i++)
-            {
+        for (int i = 0; i < damage; i++)
+        {
+            if (health>0){
                 health--;
                 if (hearts[lastHeart].sprite == fullHeart){
                     hearts[lastHeart].sprite = Heart34;
@@ -90,8 +90,8 @@ public Sprite emptyHeart;
                 else if (hearts[lastHeart].sprite == QuartHeart){
                     hearts[lastHeart].sprite = emptyHeart;
                     --lastHeart;
-                } 
-            }
+                }
+            } 
         }
     }
 }

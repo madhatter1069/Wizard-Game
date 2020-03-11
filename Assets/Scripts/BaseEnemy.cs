@@ -29,6 +29,9 @@ public class BaseEnemy : MonoBehaviour
     void Start()
     {
         _scale = transform.localScale;
+        /*foreach(var component in GetComponents<Component>()){
+            Debug.Log(component);
+        }*/
     }
 
     // Update is called once per frame
@@ -76,7 +79,8 @@ public class BaseEnemy : MonoBehaviour
                     StartCoroutine(AttackAnimation()); //animate before applying damage in case player is destoryed(dead)
                     if (targetPlayer.GetComponent<Player>().GetSpellDamage(attackDamage))
                     {
-                        GetComponent<targetPlayer>().ResetTarget();
+                        GetComponent<Pathfinding.AIDestinationSetter>().target = null;
+                        targetPlayer.transform.position = targetPlayer.GetComponent<Player>().spawnPos;
                         targetPlayer = null;
                     }
                     
@@ -129,6 +133,7 @@ public class BaseEnemy : MonoBehaviour
             {
                 if (Vector2.Distance(players[i].transform.position, transform.position) <= targetingRange) {
                     targetPlayer = players[i];
+                    GetComponent<Pathfinding.AIDestinationSetter>().target = targetPlayer.transform;
                     return;
                 }
             }
@@ -138,6 +143,7 @@ public class BaseEnemy : MonoBehaviour
             if (Vector2.Distance(targetPlayer.transform.position, transform.position) >= loseTargetingRange)
             {
                 targetPlayer = null;
+                GetComponent<Pathfinding.AIDestinationSetter>().target = null;
                 _isMoving = false;
                 return;
             }

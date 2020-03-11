@@ -14,6 +14,7 @@ TagManager:
   - characterSelect
   - enemy
   - floor
+  - ground
   layers:
   - Default
   - TransparentFX
@@ -24,8 +25,8 @@ TagManager:
   - 
   - 
   - Background
-  - 
-  - 
+  - walls
+  - ground
   - 
   - 
   - 

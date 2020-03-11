@@ -11,7 +11,7 @@ public class Player : MonoBehaviour
     [SerializeField] private GameObject spell;
     public float shootCD;
     float lastShootTime;
-    private Vector2 spawnPos;
+    public Vector2 spawnPos;
 
     private Vector2 currentFacing;
 
@@ -128,11 +128,9 @@ public class Player : MonoBehaviour
         if (Input.GetKey(shootKey) && Time.time-lastShootTime > shootCD)
         {
             anim.SetBool("Attacking", true);
-            //GameObject bullet = Instantiate(spell);
             GameObject bullet = Instantiate(spell, transform.position, transform.rotation);
             Rigidbody2D bulletRb = bullet.GetComponent<Rigidbody2D>();
-            //bullet.transform.parent = null;
-            //bullet.transform.position = transform.position;
+            bullet.transform.parent = null;
             bullet.GetComponent<BaseBullet>().changeDir(currentFacing);
             lastShootTime = Time.time;
             bulletRb.velocity = currentFacing * bulletSpeed;
@@ -160,7 +158,7 @@ public class Player : MonoBehaviour
             //GetComponent<NavHelper>().avatar.SetActive(false);
             //Destroy(gameObject);
             gameObject.SetActive(false);
-            transform.position = spawnPos;
+            //transform.position = spawnPos;
             playerdead();
             return true;
         }
