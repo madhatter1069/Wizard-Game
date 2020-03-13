@@ -117,7 +117,6 @@ public class BaseEnemy : MonoBehaviour
 
         if (health <= 0)
         {
-            Destroy(GetComponent<AgentHelper>().avatar);
             Destroy(gameObject);
         }
     }

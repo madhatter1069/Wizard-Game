@@ -222,10 +222,10 @@ MonoBehaviour:
   immuneSpellType: 5
   weaknessDamageFactor: 2
   resistedDamageFactor: 0.5
-  targetingRange: 2
-  loseTargetingRange: 3
-  attackRange: 2
-  attackCD: 2
+  targetingRange: 4
+  loseTargetingRange: 4.5
+  attackRange: 0.5
+  attackCD: 1
   targetPlayer: {fileID: 0}
 --- !u!61 &891047681998417831
 BoxCollider2D:
@@ -280,7 +280,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  drawGizmos: 1
+  drawGizmos: 0
   detailedGizmos: 0
   startEndModifier:
     addPoints: 0
@@ -327,7 +327,7 @@ MonoBehaviour:
   slowdownDistance: 0.6
   pickNextWaypointDist: 0.59
   endReachedDistance: 0.2
-  alwaysDrawGizmos: 1
+  alwaysDrawGizmos: 0
   slowWhenNotFacingTarget: 1
   whenCloseToDestination: 0
   constrainInsideGraph: 0

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    //[SerializeField] private GameObject enemyList;
+    [SerializeField] private GameObject enemyList;
     [SerializeField] private GameObject win;
     [SerializeField] private GameObject lose;
     public int p1health;
@@ -19,14 +19,14 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        /*if (enemyList.transform.childCount == 0){
+        if (enemyList.transform.childCount == 0){
             win.SetActive(true);
             StartCoroutine(QuitGame());
         }
         if (p1health == 0 && p2health == 0){
             lose.SetActive(true);
             StartCoroutine(QuitGame());
-        }*/
+        }
     }
     private IEnumerator QuitGame(){
         yield return new WaitForSeconds(5f);
