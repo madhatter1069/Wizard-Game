@@ -10,24 +10,16 @@ public class CameraPan : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Invoke("FindPlayers",0.1f);
+        Invoke("FindPlayers",0.01f);
     }
     void FindPlayers(){
-        object[] obj = GameObject.FindObjectsOfType<GameObject>();
-        foreach (object o in obj)
-        {
-            GameObject g = (GameObject) o;
-            if (g.name == "player1"){
-                player1 = g;
-            }
-            if (g.name == "player2"){
-                player2 = g;
-            }
-        }
+        GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
+        player1 = players[0];
+        player2 = players[1];
     }
 
     // Update is called once per frame
-    void Update()
+    void LateUpdate()
     {
         MoveCam();
     }
