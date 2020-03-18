@@ -9,6 +9,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Menu.unity
     guid: fb43e87fc1d284ea1b167b6593c47f85
   - enabled: 1
-    path: Assets/Scenes/ManuallyGeneratedLevel1.unity
-    guid: 979cb09fa6925a44db9430f1ab581fe9
+    path: Assets/Scenes/Dungeon.unity
+    guid: 686f2bdb4409442de9526dd559c6bda2
   m_configObjects: {}

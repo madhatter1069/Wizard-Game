@@ -1,10 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] private GameObject enemyList;
+    [SerializeField] private GameObject Doors;
     [SerializeField] private GameObject win;
     [SerializeField] private GameObject lose;
     public int p1health;
@@ -19,7 +20,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (enemyList.transform.childCount == 0){
+        if (Doors.transform.childCount == 0){
             win.SetActive(true);
             StartCoroutine(QuitGame());
         }
@@ -30,6 +31,6 @@ public class GameManager : MonoBehaviour
     }
     private IEnumerator QuitGame(){
         yield return new WaitForSeconds(5f);
-        Application.Quit();
+        SceneManager.LoadScene(0);
     }
 }
