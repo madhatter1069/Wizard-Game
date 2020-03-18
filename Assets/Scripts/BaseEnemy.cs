@@ -46,7 +46,6 @@ public class BaseEnemy : MonoBehaviour
         
     }
 
-
     private void Move()
     {
         //find player, start moving and animation
@@ -125,26 +124,36 @@ public class BaseEnemy : MonoBehaviour
 
     private void CheckTargetPlayer()
     {
-        if (!targetPlayer)
-        {
-            GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
-            for (int i=0;i<players.GetLength(0);++i)
+        GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
+        foreach (GameObject p in players){
+            if (!targetPlayer)
             {
-                if (Vector2.Distance(players[i].transform.position, transform.position) <= targetingRange) {
-                    targetPlayer = players[i];
-                    GetComponent<Pathfinding.AIDestinationSetter>().target = targetPlayer.transform;
-                    return;
+                for (int i=0;i<players.GetLength(0);++i)
+                {
+                    if (Vector2.Distance(p.transform.position, transform.position) <= targetingRange) {
+                        targetPlayer = p;
+                        GetComponent<Pathfinding.AIDestinationSetter>().target = targetPlayer.transform;
+                        return;
+                    }
                 }
             }
-        }
-        else
-        {
-            if (Vector2.Distance(targetPlayer.transform.position, transform.position) >= loseTargetingRange)
-            {
-                targetPlayer = null;
-                GetComponent<Pathfinding.AIDestinationSetter>().target = null;
-                _isMoving = false;
-                return;
+            else if(targetPlayer){
+                if(Vector2.Distance(targetPlayer.transform.position, transform.position) > Vector2.Distance(p.transform.position, transform.position)){
+                    if (Vector2.Distance(p.transform.position, transform.position) <= targetingRange) {
+                        targetPlayer = p;
+                        GetComponent<Pathfinding.AIDestinationSetter>().target = targetPlayer.transform;
+                        return;
+                    }
+                }
+            }
+            else {
+                if (Vector2.Distance(targetPlayer.transform.position, transform.position) >= loseTargetingRange)
+                {
+                    targetPlayer = null;
+                    GetComponent<Pathfinding.AIDestinationSetter>().target = null;
+                    _isMoving = false;
+                    return;
+                }
             }
         }
     }
