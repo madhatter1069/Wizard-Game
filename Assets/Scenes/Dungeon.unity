@@ -7077,7 +7077,7 @@ GameObject:
   m_Component:
   - component: {fileID: 847044422}
   m_Layer: 0
-  m_Name: Enemies1 (4)
+  m_Name: EnemiesBR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7261,7 +7261,7 @@ GameObject:
   m_Component:
   - component: {fileID: 941311840}
   m_Layer: 0
-  m_Name: Enemies1 (3)
+  m_Name: EnemiesTM
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7390,7 +7390,7 @@ GameObject:
   m_Component:
   - component: {fileID: 961427874}
   m_Layer: 0
-  m_Name: Enemies1 (1)
+  m_Name: EnemiesBM
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9346,7 +9346,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1222474846}
   m_Layer: 0
-  m_Name: Enemies1 (5)
+  m_Name: EnemiesTR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9360,7 +9360,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1222474845}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 27.015331, y: 11.959177, z: 14.275422}
+  m_LocalPosition: {x: 27.36, y: 11.959177, z: 14.275422}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 493331263}
@@ -13909,7 +13909,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1516955318}
   m_Layer: 0
-  m_Name: Enemies1
+  m_Name: EnemiesBL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18057,7 +18057,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2144437476}
   m_Layer: 0
-  m_Name: Enemies1 (2)
+  m_Name: EnemiesTL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
