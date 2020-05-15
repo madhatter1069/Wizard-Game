@@ -2,28 +2,24 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PickableSpell : MonoBehaviour
+public class Healing : MonoBehaviour
 {
-
-    //public int spellIndex;
-
-    //public GameObject[] spellObjects;
-    [SerializeField] private GameObject spellProjectile;
+    [SerializeField ] private int healthVal;
     public float timer;
 
     void OnTriggerEnter2D(Collider2D other)
-    { 
-        if (other.gameObject.CompareTag("Player"))
+    {
+        if (other.gameObject.CompareTag("Player") && 
+            other.gameObject.GetComponent<Player>().health<other.gameObject.GetComponent<Player>().maxHealth)
         {
-            other.gameObject.GetComponent<Player>().ChangeSpell(spellProjectile);
-            //Destroy(gameObject);
+            other.gameObject.GetComponent<Player>().HealPlayer(healthVal);
             gameObject.GetComponent<SpriteRenderer>().enabled = false;
             gameObject.GetComponent<BoxCollider2D>().enabled = false;
-            StartCoroutine(respawnBook());
-        }
+            StartCoroutine(respawnHeart());
+        } 
     }
 
-    IEnumerator respawnBook()
+    IEnumerator respawnHeart()
     {
         yield return new WaitForSeconds(timer);
         gameObject.GetComponent<SpriteRenderer>().enabled = true;

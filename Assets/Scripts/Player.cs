@@ -6,6 +6,7 @@ public class Player : MonoBehaviour
 {
     public int playId;
     public float health;
+    public float maxHealth;
     public float moveSpeed = 4;
     public float bulletSpeed = 6;
     [SerializeField] private GameObject spell;
@@ -30,6 +31,8 @@ public class Player : MonoBehaviour
         anim.SetBool("Attacking", false);
         anim.SetInteger("Vertical", 0);
         anim.SetInteger("Horizontal", 1);
+        maxHealth = health;
+
     }
 
     public void ChangeSpell(GameObject Newspell){
@@ -203,5 +206,10 @@ public class Player : MonoBehaviour
                 }
             }
         }
+    }
+    public void HealPlayer(int heartVal)
+    {
+        health += heartVal;
+        gameObject.GetComponent<Health>().HealMe(heartVal);
     }
 }
