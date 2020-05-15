@@ -123,3 +123,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spellProjectile: {fileID: 1240177599423623845, guid: e8a171e1450bf49879cdf0dcd16091ce,
     type: 3}
+  timer: 30

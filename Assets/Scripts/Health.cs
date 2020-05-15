@@ -94,4 +94,28 @@ public Sprite emptyHeart;
             } 
         }
     }
+
+    public void HealMe(int regen)
+    {
+        for(int i=0; i<regen; i++)
+        {
+            if (health<numOfHearts*4)
+            {
+                health++;
+                if (hearts[lastHeart].sprite == fullHeart){
+                    lastHeart++;
+                    hearts[lastHeart].sprite = QuartHeart;
+                }
+                else if (hearts[lastHeart].sprite == Heart34){
+                    hearts[lastHeart].sprite = fullHeart;
+                }
+                else if (hearts[lastHeart].sprite == HalfHeart){
+                    hearts[lastHeart].sprite = Heart34;
+                }
+                else if (hearts[lastHeart].sprite == QuartHeart){
+                    hearts[lastHeart].sprite = HalfHeart;
+                }
+            }
+        }
+    }
 }
