@@ -99,14 +99,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyId: 0
-  health: 100
+  health: 50
   attackDamage: 2
   weakSpellType: 3
   resistedSpellType: 0
   immuneSpellType: 4
   weaknessDamageFactor: 2
   resistedDamageFactor: 0.5
-  targetingRange: 3.5
+  targetingRange: 4
   loseTargetingRange: 4.5
   attackRange: 0.5
   attackCD: 1
@@ -197,7 +197,7 @@ MonoBehaviour:
   repathRate: 0.5
   canSearch: 1
   canMove: 1
-  maxSpeed: 2
+  maxSpeed: 3
   gravity: {x: 0, y: 0, z: 0}
   groundMask:
     serializedVersion: 2

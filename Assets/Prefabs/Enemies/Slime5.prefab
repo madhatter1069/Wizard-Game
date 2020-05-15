@@ -71,8 +71,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1830632579
+  m_SortingLayer: 4
   m_SortingOrder: 1
   m_Sprite: {fileID: -3176835011548241861, guid: 81c6961c00be64e0a970edab387fae05,
     type: 3}
@@ -99,14 +99,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyId: 0
-  health: 100
+  health: 50
   attackDamage: 2
   weakSpellType: 4
   resistedSpellType: 3
   immuneSpellType: 5
   weaknessDamageFactor: 2
   resistedDamageFactor: 0.5
-  targetingRange: 3.5
+  targetingRange: 4
   loseTargetingRange: 4.5
   attackRange: 0.5
   attackCD: 1
@@ -197,7 +197,7 @@ MonoBehaviour:
   repathRate: 0.5
   canSearch: 1
   canMove: 1
-  maxSpeed: 2
+  maxSpeed: 3
   gravity: {x: 0, y: 0, z: 0}
   groundMask:
     serializedVersion: 2
