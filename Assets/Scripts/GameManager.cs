@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject lose;
     public int p1health;
     public int p2health;
+
     // Start is called before the first frame update
     void Start()
     {

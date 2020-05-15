@@ -25,11 +25,13 @@ public class BaseEnemy : MonoBehaviour
     private bool _isMoving = false;
     private bool _isAttacking = false;
     private Vector3 _scale;
-    
 
     void Start()
     {
         _scale = transform.localScale;
+        /*foreach(var component in GetComponents<Component>()){
+            Debug.Log(component);
+        }*/
     }
 
     // Update is called once per frame
@@ -136,19 +138,21 @@ public class BaseEnemy : MonoBehaviour
                 }
             }
             else if(targetPlayer){
-                if (Vector2.Distance(targetPlayer.transform.position, transform.position) >= loseTargetingRange)
-                {
-                    targetPlayer = null;
-                    GetComponent<Pathfinding.AIDestinationSetter>().target = null;
-                    _isMoving = false;
-                    return;
-                }
                 if(Vector2.Distance(targetPlayer.transform.position, transform.position) > Vector2.Distance(p.transform.position, transform.position)){
                     if (Vector2.Distance(p.transform.position, transform.position) <= targetingRange) {
                         targetPlayer = p;
                         GetComponent<Pathfinding.AIDestinationSetter>().target = targetPlayer.transform;
                         return;
                     }
+                }
+            }
+            else {
+                if (Vector2.Distance(targetPlayer.transform.position, transform.position) >= loseTargetingRange)
+                {
+                    targetPlayer = null;
+                    GetComponent<Pathfinding.AIDestinationSetter>().target = null;
+                    _isMoving = false;
+                    return;
                 }
             }
         }
