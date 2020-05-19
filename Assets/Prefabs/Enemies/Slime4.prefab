@@ -108,7 +108,7 @@ MonoBehaviour:
   resistedDamageFactor: 0.5
   targetingRange: 3.5
   loseTargetingRange: 4.5
-  attackRange: 0.5
+  attackRange: 1
   attackCD: 1
   targetPlayer: {fileID: 0}
 --- !u!61 &8225875956798877220
@@ -208,9 +208,9 @@ MonoBehaviour:
   targetCompatibility: {fileID: 0}
   maxAcceleration: -2.5
   rotationSpeed: 360
-  slowdownDistance: 0.6
+  slowdownDistance: 2
   pickNextWaypointDist: 0.59
-  endReachedDistance: 0.2
+  endReachedDistance: 1
   alwaysDrawGizmos: 0
   slowWhenNotFacingTarget: 1
   whenCloseToDestination: 0
