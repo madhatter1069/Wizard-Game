@@ -1,5 +1,1 @@
-<<<<<<< HEAD
-﻿{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audioPlay":false,"sceneViewState":{"showFog":true,"showMaterialUpdate":false,"showSkybox":true,"showFlares":true,"showImageEffects":true,"showParticleSystems":true},"in2DMode":true,"pivot":{"x":3.217586040496826,"y":-1.1421597003936768,"z":-106.58731842041016},"rotation":{"x":0.0,"y":0.0,"z":0.0,"w":1.0},"size":29.59022331237793,"orthographic":true}
-=======
 ﻿{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audioPlay":false,"sceneViewState":{"showFog":true,"showMaterialUpdate":false,"showSkybox":true,"showFlares":true,"showImageEffects":true,"showParticleSystems":true},"in2DMode":true,"pivot":{"x":11.137458801269532,"y":2.0279784202575685,"z":-22.030637741088868},"rotation":{"x":0.0,"y":0.0,"z":0.0,"w":1.0},"size":38.56241226196289,"orthographic":true}
->>>>>>> AlphaBuild
