@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] private GameObject Doors;
+    [SerializeField] private GameObject Enemies;
     [SerializeField] private GameObject win;
     [SerializeField] private GameObject lose;
     public int p1health;
@@ -20,7 +20,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (Doors.transform.childCount == 0){
+        if (Enemies.transform.childCount == 0){
             win.SetActive(true);
             StartCoroutine(QuitGame());
         }
