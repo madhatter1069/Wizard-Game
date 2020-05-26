@@ -30,7 +30,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5931103987340062051}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.62, y: 0.1, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -100,16 +100,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyId: 0
   health: 100
-  attackDamage: 0
+  attackDamage: 1
   weakSpellType: 1
   resistedSpellType: 0
   immuneSpellType: 0
   weaknessDamageFactor: 0
   resistedDamageFactor: 0
-  targetingRange: 0
-  loseTargetingRange: 0
-  attackRange: 0
-  attackCD: 0
+  targetingRange: 5
+  loseTargetingRange: 5.5
+  attackRange: 4
+  attackCD: 0.1
   targetPlayer: {fileID: 0}
 --- !u!61 &-2145896190995364913
 BoxCollider2D:
@@ -197,7 +197,7 @@ MonoBehaviour:
   repathRate: 0.5
   canSearch: 1
   canMove: 1
-  maxSpeed: 3
+  maxSpeed: 2.7
   gravity: {x: 0, y: 0, z: 0}
   groundMask:
     serializedVersion: 2
@@ -208,10 +208,10 @@ MonoBehaviour:
   targetCompatibility: {fileID: 0}
   maxAcceleration: -2.5
   rotationSpeed: 360
-  slowdownDistance: 0.6
-  pickNextWaypointDist: 0.59
-  endReachedDistance: 0.2
-  alwaysDrawGizmos: 0
+  slowdownDistance: 4
+  pickNextWaypointDist: 6
+  endReachedDistance: 3.5
+  alwaysDrawGizmos: 1
   slowWhenNotFacingTarget: 1
   whenCloseToDestination: 0
   constrainInsideGraph: 0
