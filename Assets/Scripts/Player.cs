@@ -18,6 +18,7 @@ public class Player : MonoBehaviour
 
     public Animator anim;
 
+
     void Start()
     {
         spawnPos = transform.position;
@@ -118,13 +119,13 @@ public class Player : MonoBehaviour
         switch (playId)
         {
             case 0:
-                shootKey = KeyCode.V;
+                shootKey = KeyCode.LeftShift;
                 break;
             case 1:
-                shootKey = KeyCode.Period;
+                shootKey = KeyCode.Space;
                 break;
             default:
-                shootKey = KeyCode.V;
+                shootKey = KeyCode.LeftShift;
                 break;
         }
 
@@ -137,6 +138,7 @@ public class Player : MonoBehaviour
             bullet.GetComponent<BaseBullet>().changeDir(currentFacing);
             lastShootTime = Time.time;
             bulletRb.velocity = currentFacing * bulletSpeed;
+            FindObjectOfType<AudioManager>().Play("SpellCast");
         }
         if (Input.GetKey(shootKey) == false)
         {
