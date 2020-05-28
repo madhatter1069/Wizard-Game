@@ -6,7 +6,6 @@ using UnityEngine.AI;
 
 public class BaseEnemy : MonoBehaviour
 {
-    public float enemyId;
     public float health;
     public int attackDamage;
  
