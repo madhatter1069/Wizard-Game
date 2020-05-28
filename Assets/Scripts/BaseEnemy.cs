@@ -6,6 +6,7 @@ using UnityEngine.AI;
 
 public class BaseEnemy : MonoBehaviour
 {
+    public float enemyId;
     public float health;
     public int attackDamage;
  
@@ -24,11 +25,13 @@ public class BaseEnemy : MonoBehaviour
     private bool _isMoving = false;
     private bool _isAttacking = false;
     private Vector3 _scale;
-    
+
 
     void Start()
     {
         _scale = transform.localScale;
+
+        //soundController = GetComponent<GameObject>();
     }
 
     // Update is called once per frame
@@ -38,6 +41,16 @@ public class BaseEnemy : MonoBehaviour
         Move();
         CheckTargetPlayer();
         if (health <= 0){
+            switch (enemyId)
+            {
+                case 1:
+                    FindObjectOfType<AudioManager>().Play("SlimeDeath");
+                    break;
+
+                case 2:
+                    FindObjectOfType<AudioManager>().Play("SkeletonDeath");
+                    break;
+            }
             Destroy(gameObject);
         }
         
@@ -113,6 +126,17 @@ public class BaseEnemy : MonoBehaviour
 
         if (health <= 0)
         {
+            switch (enemyId)
+            {
+                case 1:
+                    FindObjectOfType<AudioManager>().Play("SlimeDeath");
+                    break;
+
+                case 2:
+                    FindObjectOfType<AudioManager>().Play("SkeletonDeath");
+                    break;
+            }
+            
             Destroy(gameObject);
         }
     }
