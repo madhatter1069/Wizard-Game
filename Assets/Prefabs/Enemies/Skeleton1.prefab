@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 4901136916539323561}
   - component: {fileID: 6525765170500863552}
   - component: {fileID: 8087832862505943833}
+  - component: {fileID: 2100287894345463404}
   m_Layer: 0
   m_Name: Skeleton1
   m_TagString: enemy
@@ -98,7 +99,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c33cc9bd9cd654fbe9fd16ec46dadfc2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyId: 0
   health: 100
   attackDamage: 1
   weakSpellType: 1
@@ -215,3 +215,15 @@ MonoBehaviour:
   slowWhenNotFacingTarget: 1
   whenCloseToDestination: 0
   constrainInsideGraph: 0
+--- !u!114 &2100287894345463404
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5931103987340062051}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91e7d7d60a36a412392fa687550f6f90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
