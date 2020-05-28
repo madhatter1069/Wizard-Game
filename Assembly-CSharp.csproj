@@ -57,9 +57,10 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\BaseBullet.cs" />
      <Compile Include="Assets\Scripts\BaseEnemy.cs" />
+     <Compile Include="Assets\Scripts\BossEnemy.cs" />
      <Compile Include="Assets\Scripts\CameraPan.cs" />
      <Compile Include="Assets\Scripts\CharacterSelect.cs" />
-     <Compile Include="Assets\Scripts\EnemyAi.cs" />
+     <Compile Include="Assets\Scripts\EnemyBullet.cs" />
      <Compile Include="Assets\Scripts\GameManager.cs" />
      <Compile Include="Assets\Scripts\Healing.cs" />
      <Compile Include="Assets\Scripts\Health.cs" />

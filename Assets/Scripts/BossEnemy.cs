@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.AI;
 
 
-public class BaseEnemy : MonoBehaviour
+public class BossEnemy : MonoBehaviour
 {
     public float health;
     public int attackDamage;
@@ -24,6 +24,8 @@ public class BaseEnemy : MonoBehaviour
     private bool _isMoving = false;
     private bool _isAttacking = false;
     private Vector3 _scale;
+
+    public GameObject Shot; 
     
 
     void Start()
@@ -66,23 +68,13 @@ public class BaseEnemy : MonoBehaviour
     {
         if (targetPlayer)
         {
-            if(Vector2.Distance(targetPlayer.transform.position,transform.position) < attackRange)
-            {
-                if (!_isAttacking)
-                {
-                    _isAttacking = true;
-                    _isMoving = false; //stop moving animation
-                    StartCoroutine(AttackAnimation()); //animate before applying damage in case player is destoryed(dead)
-                    if (targetPlayer.GetComponent<Player>().GetSpellDamage(attackDamage))
-                    {
-                        GetComponent<Pathfinding.AIDestinationSetter>().target = null;
-                        targetPlayer.transform.position = targetPlayer.GetComponent<Player>().spawnPos;
-                        targetPlayer = null;
-                    }
-                    
-                }
-            }
-            //_isAttacking is reset when animation ends
+            Vector3 dir = targetPlayer.transform.position - transform.position;
+            dir = targetPlayer.transform.InverseTransformDirection(dir);
+            Vector2 UD = new Vector2(0, dir.y);
+            Vector2 LR = new Vector2(dir.x, 0);
+            GameObject projectile = Instantiate(Shot, transform.position, transform.rotation);
+            //float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+
         }
     }
 
