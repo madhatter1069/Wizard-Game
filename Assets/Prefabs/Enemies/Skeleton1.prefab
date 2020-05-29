@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5931103987340062054}
   - component: {fileID: 5931103987340062049}
-  - component: {fileID: 5931103987340062048}
   - component: {fileID: -2145896190995364913}
   - component: {fileID: 4901136916539323561}
   - component: {fileID: 6525765170500863552}
@@ -32,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 5931103987340062051}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 15.385625, y: 15.385625, z: 15.385625}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -87,30 +86,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &5931103987340062048
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5931103987340062051}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c33cc9bd9cd654fbe9fd16ec46dadfc2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 100
-  attackDamage: 1
-  weakSpellType: 1
-  resistedSpellType: 0
-  immuneSpellType: 0
-  weaknessDamageFactor: 0
-  resistedDamageFactor: 0
-  targetingRange: 5
-  loseTargetingRange: 5.5
-  attackRange: 4
-  attackCD: 0.1
-  targetPlayer: {fileID: 0}
 --- !u!61 &-2145896190995364913
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -124,7 +99,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.00024315342, y: -0.00053557754}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -135,7 +110,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.12156696, y: 0.16104457}
   m_EdgeRadius: 0
 --- !u!114 &4901136916539323561
 MonoBehaviour:
@@ -192,7 +167,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 2
-  radius: 0.5
+  radius: 0.08
   height: 2
   repathRate: 0.5
   canSearch: 1
@@ -227,3 +202,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91e7d7d60a36a412392fa687550f6f90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyId: 2
+  health: 500
+  attackDamage: 0
+  weakSpellType: 6
+  resistedSpellType: 6
+  immuneSpellType: 6
+  weaknessDamageFactor: 0
+  resistedDamageFactor: 0
+  targetingRange: 5
+  loseTargetingRange: 5.5
+  attackRange: 0
+  attackCD: 0
+  targetPlayer: {fileID: 0}

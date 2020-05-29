@@ -119,13 +119,13 @@ public class Player : MonoBehaviour
         switch (playId)
         {
             case 0:
-                shootKey = KeyCode.LeftShift;
+                shootKey = KeyCode.V;
                 break;
             case 1:
-                shootKey = KeyCode.Space;
+                shootKey = KeyCode.Period;
                 break;
             default:
-                shootKey = KeyCode.LeftShift;
+                shootKey = KeyCode.V;
                 break;
         }
 

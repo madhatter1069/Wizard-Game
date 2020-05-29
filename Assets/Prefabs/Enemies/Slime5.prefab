@@ -10,11 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 1795054692077173768}
   - component: {fileID: 8225638455570732941}
-  - component: {fileID: 7834725784157521938}
   - component: {fileID: 891047681998417831}
   - component: {fileID: -8883708582864106766}
   - component: {fileID: -8952254384312881545}
   - component: {fileID: -1823299874666004423}
+  - component: {fileID: 7834725784157521938}
   m_Layer: 0
   m_Name: Slime5
   m_TagString: enemy
@@ -86,31 +86,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &7834725784157521938
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8578832463221090798}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c33cc9bd9cd654fbe9fd16ec46dadfc2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemyId: 0
-  health: 100
-  attackDamage: 2
-  weakSpellType: 4
-  resistedSpellType: 3
-  immuneSpellType: 5
-  weaknessDamageFactor: 2
-  resistedDamageFactor: 0.5
-  targetingRange: 3.5
-  loseTargetingRange: 4.5
-  attackRange: 1
-  attackCD: 1
-  targetPlayer: {fileID: 0}
 --- !u!61 &891047681998417831
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -215,3 +190,28 @@ MonoBehaviour:
   slowWhenNotFacingTarget: 1
   whenCloseToDestination: 0
   constrainInsideGraph: 0
+--- !u!114 &7834725784157521938
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8578832463221090798}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c33cc9bd9cd654fbe9fd16ec46dadfc2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyId: 1
+  health: 100
+  attackDamage: 2
+  weakSpellType: 4
+  resistedSpellType: 3
+  immuneSpellType: 5
+  weaknessDamageFactor: 2
+  resistedDamageFactor: 0.5
+  targetingRange: 3.5
+  loseTargetingRange: 4.5
+  attackRange: 1
+  attackCD: 1
+  targetPlayer: {fileID: 0}
