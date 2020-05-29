@@ -5682,6 +5682,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Skeleton1
       objectReference: {fileID: 0}
+    - target: {fileID: 5931103987340062051, guid: 906fa8f61003f47e48d0ef494ba890ec,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5931103987340062054, guid: 906fa8f61003f47e48d0ef494ba890ec,
         type: 3}
       propertyPath: m_LocalPosition.x
