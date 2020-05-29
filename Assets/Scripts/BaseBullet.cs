@@ -77,26 +77,10 @@ public class BaseBullet : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Move();
-        CheckLifeTime();
-        
     }
 
     public void changeDir(Vector2 newDir){
         moveDirection=newDir;
-    }
-
-    private void Move()
-    {
-        transform.transform.Translate(moveDirection*moveSpeed*Time.deltaTime);
-
-    }
-
-
-    private void CheckLifeTime()
-    {
-        if (Time.time - beginTime > lifeTime)
-            Destroy(gameObject);
     }
     void OnTriggerEnter2D(Collider2D other)
     { 

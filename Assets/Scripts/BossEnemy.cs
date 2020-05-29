@@ -70,9 +70,6 @@ public class BossEnemy : MonoBehaviour
                 //bullet.GetComponent<BaseBullet>().changeDir(currentFacing);
                 shotTime = Time.time;
                 Vector2 facing = targetPlayer.transform.position - transform.position ;
-                //new Vector2(transform.rotation.x - targetPlayer.transform.position.x, 
-                                            //transform.rotation.y - targetPlayer.transform.position.y);
-                Debug.Log(facing.normalized);
                 bulletRb.velocity = facing.normalized * 6 ;
             }
         }

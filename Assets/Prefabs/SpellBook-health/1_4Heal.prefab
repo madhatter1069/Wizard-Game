@@ -122,4 +122,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthVal: 1
-  timer: 20
+  timer: 10

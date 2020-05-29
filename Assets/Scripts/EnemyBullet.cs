@@ -69,16 +69,14 @@ public class EnemyBullet : MonoBehaviour
         transform.transform.Rotate(0f, 0f, rotation, Space.World);
     }
 
+    // Update is called once per frame
+    void Update()
+    {
+    }
+
     public void changeDir(Vector2 newDir){
         moveDirection=newDir;
     }
-
-    private void Move()
-    {
-        transform.transform.Translate(moveDirection*moveSpeed*Time.deltaTime);
-
-    }
-
 
     void OnTriggerEnter2D(Collider2D other)
     { 

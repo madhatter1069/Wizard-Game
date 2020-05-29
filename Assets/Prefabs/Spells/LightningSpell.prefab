@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 5907329093273228575}
   - component: {fileID: 5907329093273228544}
-  - component: {fileID: 5907329093273228545}
   - component: {fileID: 5907329093273228546}
   - component: {fileID: 2619282636323983598}
+  - component: {fileID: 7269891682537996513}
   m_Layer: 0
   m_Name: LightningSpell
   m_TagString: spell
@@ -84,32 +84,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &5907329093273228545
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5907329093273228547}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.5, y: 0.5}
-    newSize: {x: 0.75, y: 0.75}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.75, y: 0.75}
-  m_EdgeRadius: 0
 --- !u!50 &5907329093273228546
 Rigidbody2D:
   serializedVersion: 4
@@ -146,3 +120,37 @@ MonoBehaviour:
   moveSpeed: 12
   damage: 25
   element: 5
+--- !u!60 &7269891682537996513
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5907329093273228547}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.5, y: 0.5}
+    newSize: {x: 0.75, y: 0.75}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.19042319, y: 0.24553141}
+      - {x: -0.06532095, y: 0.13064197}
+      - {x: -0.16205202, y: 0.02480796}
+      - {x: -0.2577001, y: -0.1821965}
+      - {x: -0.25, y: -0.25}
+      - {x: -0.19031839, y: -0.24852985}
+      - {x: 0.012244038, y: -0.16519298}
+      - {x: 0.13064203, y: -0.07442398}
+      - {x: 0.25, y: 0.25}
