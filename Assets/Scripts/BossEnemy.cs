@@ -8,6 +8,7 @@ public class BossEnemy : MonoBehaviour
 {
     public float enemyId;
     public float health;
+    public float maxHealth;
     public int attackDamage;
  
     public spellType weakSpellType;
@@ -22,6 +23,8 @@ public class BossEnemy : MonoBehaviour
     public float attackCD;
     private float shotTime;
     [SerializeField] private GameObject spell;
+    [SerializeField] private float spellSpeed;
+    
 
     [SerializeField]GameObject targetPlayer;
     private bool _isMoving = false;
@@ -36,6 +39,7 @@ public class BossEnemy : MonoBehaviour
     {
         _scale = transform.localScale;
         shotTime = Time.time;
+        health = maxHealth;
     }
 
     void Update()
@@ -67,10 +71,11 @@ public class BossEnemy : MonoBehaviour
                 GameObject bullet = Instantiate(spell, transform.position, transform.rotation);
                 Rigidbody2D bulletRb = bullet.GetComponent<Rigidbody2D>();
                 bullet.transform.parent = null;
-                //bullet.GetComponent<BaseBullet>().changeDir(currentFacing);
                 shotTime = Time.time;
                 Vector2 facing = targetPlayer.transform.position - transform.position ;
-                bulletRb.velocity = facing.normalized * 6 ;
+                facing = facing.normalized;
+                bullet.GetComponent<EnemyBullet>().changeDir(facing);
+                bulletRb.velocity = facing * spellSpeed ;
             }
         }
 
@@ -149,6 +154,11 @@ public class BossEnemy : MonoBehaviour
     public GameObject getTargetPlayer()
     {
         return targetPlayer;
+    }
+
+    public void ResetHealth()
+    {
+        health = maxHealth;
     }
 
 

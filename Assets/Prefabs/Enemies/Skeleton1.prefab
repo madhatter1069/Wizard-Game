@@ -31,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 5931103987340062051}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 15.385625, y: 15.385625, z: 15.385625}
+  m_LocalScale: {x: 15, y: 15, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -172,7 +172,7 @@ MonoBehaviour:
   repathRate: 0.5
   canSearch: 1
   canMove: 1
-  maxSpeed: 2.7
+  maxSpeed: 3.2
   gravity: {x: 0, y: 0, z: 0}
   groundMask:
     serializedVersion: 2
@@ -184,8 +184,8 @@ MonoBehaviour:
   maxAcceleration: -2.5
   rotationSpeed: 360
   slowdownDistance: 4
-  pickNextWaypointDist: 6
-  endReachedDistance: 3.5
+  pickNextWaypointDist: 6.5
+  endReachedDistance: 3
   alwaysDrawGizmos: 1
   slowWhenNotFacingTarget: 1
   whenCloseToDestination: 0
@@ -204,14 +204,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyId: 2
   health: 500
+  maxHealth: 500
   attackDamage: 0
   weakSpellType: 6
   resistedSpellType: 6
   immuneSpellType: 6
-  weaknessDamageFactor: 0
-  resistedDamageFactor: 0
-  targetingRange: 5
-  loseTargetingRange: 5.5
+  weaknessDamageFactor: 1
+  resistedDamageFactor: 1
+  targetingRange: 6.5
+  loseTargetingRange: 7
   attackRange: 0
-  attackCD: 0
+  attackCD: 0.8
+  spell: {fileID: 1495325338612393660, guid: c95b26abac5ce465c9518adefea96b9b, type: 3}
+  spellSpeed: 6
   targetPlayer: {fileID: 0}

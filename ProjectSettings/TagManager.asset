@@ -16,6 +16,8 @@ TagManager:
   - floor
   - ground
   - Healing
+  - EnemySpell
+  - Boss
   layers:
   - Default
   - TransparentFX

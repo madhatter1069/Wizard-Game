@@ -160,8 +160,6 @@ public class Player : MonoBehaviour
         gameObject.GetComponent<Health>().doDamage(damage);
         if (health <= 0)
         {
-            //GetComponent<NavHelper>().avatar.SetActive(false);
-            //Destroy(gameObject);
             gameObject.SetActive(false);
             //transform.position = spawnPos;
             playerdead();

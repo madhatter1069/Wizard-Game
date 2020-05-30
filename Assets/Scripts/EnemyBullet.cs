@@ -7,66 +7,20 @@ using UnityEngine;
 
 public class EnemyBullet : MonoBehaviour
 {
-    public float moveSpeed = 6;
     private Vector2 moveDirection;
-    public float damage = 1;
+    public int damage;
     [SerializeField] public spellType element;
 
-    float rotation;
+    private float rotation;
 
 
     void Start()
     {
 
         rotation = 0f;
+        rotation = Mathf.Atan2(moveDirection.y, moveDirection.x) * Mathf.Rad2Deg;
 
-        if (moveDirection.x == 0 && moveDirection.y > 0)
-        {
-            // Up (0, 1)
-            rotation = 45f;
-        }
-        else if (moveDirection.x < 0 && moveDirection.y > 0)
-        {
-            // Up Left (-1, 1)
-            rotation = 90f;
-        }
-        else if (moveDirection.x > 0 && moveDirection.y > 0)
-        {
-            // Up Right (1, 1)
-            rotation = 0f;
-        }
-        else if (moveDirection.x == 0 && moveDirection.y < 0)
-        {
-            // Down (0, -1)
-            rotation = 225f;
-        }
-        else if (moveDirection.x < 0 && moveDirection.y < 0)
-        {
-            // Down Left (-1, -1)
-            rotation = 180f;
-        }
-        else if (moveDirection.x > 0 && moveDirection.y < 0)
-        {
-            // Down Right (1, -1)
-            rotation = 270f;
-        }
-        else if (moveDirection.x < 0 && moveDirection.y == 0)
-        {
-            // Left (-1, 0)
-            rotation = 135f;
-        }
-        else if (moveDirection.x > 0 && moveDirection.y == 0)
-        {
-            // Right (1, 0)
-            rotation = 315f;
-        }
-        else
-        {
-            // moveDirection = (0,0); Not Moving
-            rotation = 0f;
-        }
-
-        transform.transform.Rotate(0f, 0f, rotation, Space.World);
+        transform.transform.Rotate(0f, 0f, rotation-45, Space.World);
     }
 
     // Update is called once per frame
@@ -82,6 +36,11 @@ public class EnemyBullet : MonoBehaviour
     { 
         if (other.gameObject.CompareTag("floor"))
         {
+            Destroy(gameObject);
+        }
+        if (other.gameObject.CompareTag("Player"))
+        {
+            other.GetComponent<Player>().GetSpellDamage(damage);
             Destroy(gameObject);
         }
     }

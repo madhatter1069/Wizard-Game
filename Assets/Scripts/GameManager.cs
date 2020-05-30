@@ -20,7 +20,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (Enemies.transform.childCount == 0){
+        if (Enemies == null){
             win.SetActive(true);
             StartCoroutine(QuitGame());
         }

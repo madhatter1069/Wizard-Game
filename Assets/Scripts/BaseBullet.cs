@@ -8,7 +8,6 @@ public enum spellType {def, ice , fire, earth, wind, lightning, none};
 
 public class BaseBullet : MonoBehaviour
 {
-    public float moveSpeed = 6;
     private Vector2 moveDirection;
     public float damage = 1;
     [SerializeField] public spellType element;
