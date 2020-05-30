@@ -17,9 +17,14 @@ public class openDoors : MonoBehaviour
     {
         if(EnemyList){
             if (EnemyList.transform.childCount == 0){
+                Destroy(EnemyList.gameObject);
                 Destroy(gameObject);
             }
         }
-        else if(!EnemyList || EnemyList == null){Destroy(gameObject);}
+        else if(!EnemyList || EnemyList == null)
+        {
+            Destroy(EnemyList.gameObject);
+            Destroy(gameObject);
+        }
     }
 }
