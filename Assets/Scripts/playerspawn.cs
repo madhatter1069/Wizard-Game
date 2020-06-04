@@ -7,6 +7,7 @@ public class playerspawn : MonoBehaviour
     [SerializeField] private int playerID = 0;
     [SerializeField] private int characterint;
     [SerializeField] private GameObject characterlist;
+
     // Start is called before the first frame update
     void Start()
     {

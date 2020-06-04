@@ -16,7 +16,9 @@ public class CameraPan : MonoBehaviour
     void FindPlayers(){
         GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
         player1 = players[0];
-        player2 = players[1];
+        if (PlayerPrefs.GetInt("3") == 0){
+            player2 = players[1];
+        }
         GameObject[] FindBoss = GameObject.FindGameObjectsWithTag("Boss");
         Boss = FindBoss[0];
     }
@@ -38,7 +40,7 @@ public class CameraPan : MonoBehaviour
             player2.transform.position = player1.transform.position;
             Boss.GetComponent<BossEnemy>().ResetHealth();
         }
-        if(player2.transform.position.x > gameObject.transform.position.x + size){
+        if(player2 && player2.transform.position.x > gameObject.transform.position.x + size){
             gameObject.transform.Translate(16f,0,0);
             player1.transform.position = player2.transform.position;
             Boss.GetComponent<BossEnemy>().ResetHealth();
@@ -48,7 +50,7 @@ public class CameraPan : MonoBehaviour
             player2.transform.position = player1.transform.position;
             Boss.GetComponent<BossEnemy>().ResetHealth();
         }
-        if(player2.transform.position.y > gameObject.transform.position.y + size){
+        if(player2 && player2.transform.position.y > gameObject.transform.position.y + size){
             gameObject.transform.Translate(0,16f,0);
             player1.transform.position = player2.transform.position;
             Boss.GetComponent<BossEnemy>().ResetHealth();
@@ -59,7 +61,7 @@ public class CameraPan : MonoBehaviour
             player2.transform.position = player1.transform.position;
             Boss.GetComponent<BossEnemy>().ResetHealth();
         }
-        if(player2.transform.position.x < gameObject.transform.position.x - size){
+        if(player2 && player2.transform.position.x < gameObject.transform.position.x - size){
             gameObject.transform.Translate(-16f,0,0);
             player1.transform.position = player2.transform.position;
             Boss.GetComponent<BossEnemy>().ResetHealth();
@@ -69,7 +71,7 @@ public class CameraPan : MonoBehaviour
             player2.transform.position = player1.transform.position;
             Boss.GetComponent<BossEnemy>().ResetHealth();
         }
-        if(player2.transform.position.y < gameObject.transform.position.y - size){
+        if(player2 && player2.transform.position.y < gameObject.transform.position.y - size){
             gameObject.transform.Translate(0,-16f,0);
             player1.transform.position = player2.transform.position;
             Boss.GetComponent<BossEnemy>().ResetHealth();

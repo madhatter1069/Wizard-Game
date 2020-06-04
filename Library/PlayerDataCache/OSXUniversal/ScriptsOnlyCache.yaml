@@ -1,13 +1,18 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
+    - AudioManager
     - BaseBullet
     - BaseEnemy
+    - BossEnemy
     - CameraPan
     - CharacterSelect
+    - EnemyBullet
     - GameManager
+    - Healing
     - Health
     - MainMenu
+    - PickableSpell
     - Player
     - Spell
     - openDoors
@@ -18,9 +23,13 @@ ScriptsOnlyBuild:
     - Pathfinding.AIPath
     - Pathfinding.Seeker
     Unity.2D.Tilemap.Editor.dll:
+    - UnityEditor.Tilemaps.GridBrush
+    - UnityEditor.Tilemaps.GridPaintPaletteClipboard
+    - UnityEditor.Tilemaps.GridPaintPaletteWindow
     - UnityEditor.Tilemaps.GridPaintingState
     - UnityEditor.Tilemaps.GridPaletteBrushes
     - UnityEditor.Tilemaps.GridPalettes
+    - UnityEditor.Tilemaps.PaintableSceneViewGrid
     - UnityEditor.Tilemaps.SceneViewGridManager
     - UnityEditor.Tilemaps.TileDragAndDropManager
     Unity.TextMeshPro.dll:
@@ -55,11 +64,15 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 50
       Script: {instanceID: 0}
+    - Class: 60
+      Script: {instanceID: 0}
     - Class: 61
       Script: {instanceID: 0}
     - Class: 74
       Script: {instanceID: 0}
     - Class: 81
+      Script: {instanceID: 0}
+    - Class: 83
       Script: {instanceID: 0}
     - Class: 91
       Script: {instanceID: 0}
@@ -71,6 +84,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 604}
     - Class: 114
       Script: {instanceID: 9702}
+    - Class: 114
+      Script: {instanceID: 9812}
     - Class: 114
       Script: {instanceID: 9926}
     - Class: 114
@@ -84,27 +99,35 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 10238}
     - Class: 114
-      Script: {instanceID: 10444}
+      Script: {instanceID: 10308}
     - Class: 114
-      Script: {instanceID: 10488}
+      Script: {instanceID: 10446}
     - Class: 114
-      Script: {instanceID: 10540}
+      Script: {instanceID: 10490}
     - Class: 114
-      Script: {instanceID: 10764}
+      Script: {instanceID: 10542}
     - Class: 114
-      Script: {instanceID: 10832}
+      Script: {instanceID: 10610}
     - Class: 114
-      Script: {instanceID: 10944}
+      Script: {instanceID: 10768}
     - Class: 114
-      Script: {instanceID: 11058}
+      Script: {instanceID: 10836}
     - Class: 114
-      Script: {instanceID: 11288}
+      Script: {instanceID: 10948}
+    - Class: 114
+      Script: {instanceID: 11062}
     - Class: 114
       Script: {instanceID: 11292}
     - Class: 114
-      Script: {instanceID: 11364}
+      Script: {instanceID: 11296}
     - Class: 114
-      Script: {instanceID: 11572}
+      Script: {instanceID: 11368}
+    - Class: 114
+      Script: {instanceID: 11428}
+    - Class: 114
+      Script: {instanceID: 11580}
+    - Class: 114
+      Script: {instanceID: 11718}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -146,6 +169,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
+    - Class: 83
+      Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
     - Class: 109
@@ -159,23 +184,23 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 9952}
     - Class: 114
-      Script: {instanceID: 10382}
+      Script: {instanceID: 10384}
     - Class: 114
-      Script: {instanceID: 10406}
+      Script: {instanceID: 10408}
     - Class: 114
-      Script: {instanceID: 10804}
+      Script: {instanceID: 10808}
     - Class: 114
-      Script: {instanceID: 11058}
+      Script: {instanceID: 11062}
     - Class: 114
-      Script: {instanceID: 11076}
+      Script: {instanceID: 11080}
     - Class: 114
-      Script: {instanceID: 11288}
+      Script: {instanceID: 11292}
     - Class: 114
-      Script: {instanceID: 11364}
+      Script: {instanceID: 11368}
     - Class: 114
-      Script: {instanceID: 11566}
+      Script: {instanceID: 11574}
     - Class: 114
-      Script: {instanceID: 11794}
+      Script: {instanceID: 11804}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -217,7 +242,7 @@ ScriptsOnlyBuild:
     className: TMP_Dropdown
   - hash:
       serializedVersion: 2
-      Hash: 42709af2b07c3861b0683e0d1e51f1e8
+      Hash: b1d903336f59047e0792a32fed737e87
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PickableSpell
@@ -313,7 +338,7 @@ ScriptsOnlyBuild:
     className: Spell
   - hash:
       serializedVersion: 2
-      Hash: cb5cb70635c6da1dd8de38d4dd7b8e1b
+      Hash: 1a0d6638dc7f56d0b884e5a092ea49f9
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Player
@@ -409,6 +434,12 @@ ScriptsOnlyBuild:
     className: Shadow
   - hash:
       serializedVersion: 2
+      Hash: 9636105b65e5464b95fa9d5518f451f8
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: EnemyBullet
+  - hash:
+      serializedVersion: 2
       Hash: 1d6bc7fb33fcc56237df7c329c31fac2
     assemblyName: AstarPathfindingProject.dll
     namespaceName: Pathfinding
@@ -457,7 +488,7 @@ ScriptsOnlyBuild:
     className: playerspawn
   - hash:
       serializedVersion: 2
-      Hash: 35d8ae6257dff397fb79590d6c83a38d
+      Hash: 242e28a4920838c3fc62951e9555bc59
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: CameraPan
@@ -485,6 +516,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: ScrollRect
+  - hash:
+      serializedVersion: 2
+      Hash: aef095a2efa5ef234d2346ffb9333200
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: BossEnemy
   - hash:
       serializedVersion: 2
       Hash: c3d3430df9e3ea95e3e3d587961390fb
@@ -541,7 +578,7 @@ ScriptsOnlyBuild:
     className: RawImage
   - hash:
       serializedVersion: 2
-      Hash: 5c19c4a4e756a2003778a134d5a9193b
+      Hash: 12207c3cb9cd0e9bb8a6bb083f0de9fc
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: BaseBullet
@@ -553,7 +590,7 @@ ScriptsOnlyBuild:
     className: VerticalLayoutGroup
   - hash:
       serializedVersion: 2
-      Hash: e438e45ea520032c9eb7368e8508dc36
+      Hash: 2ba05e5813efd395cc7bb691dd4e76b7
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GameManager
@@ -685,6 +722,12 @@ ScriptsOnlyBuild:
     className: BlockManager
   - hash:
       serializedVersion: 2
+      Hash: a9e81b43411e0c054562e6f8895cc82b
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: AudioManager
+  - hash:
+      serializedVersion: 2
       Hash: 427e4ae6223362877cde7ac01baa97c3
     assemblyName: AstarPathfindingProject.dll
     namespaceName: Pathfinding
@@ -737,6 +780,12 @@ ScriptsOnlyBuild:
     assemblyName: AstarPathfindingProject.dll
     namespaceName: Pathfinding
     className: Patrol
+  - hash:
+      serializedVersion: 2
+      Hash: a35360187836b6112e3ec8fb43607370
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Healing
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -797,6 +846,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: SignalEmitter
+  - hash:
+      serializedVersion: 2
+      Hash: b7e6eb345be488877d88edfed48948a6
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: SoundController
   - hash:
       serializedVersion: 2
       Hash: 7072231382eb3c4871b3dd75ad0227e1

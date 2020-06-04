@@ -21,6 +21,12 @@ public class Player : MonoBehaviour
 
     void Start()
     {
+        if (playId == 1 && PlayerPrefs.GetInt("3") == 1){
+            health = 0;
+            playerdead();
+            gameObject.SetActive(false);
+        }
+
         spawnPos = transform.position;
         SetPlayer(gameObject);
         currentFacing = Vector2.down;
