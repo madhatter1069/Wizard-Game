@@ -12,6 +12,7 @@ public class CameraPan : MonoBehaviour
     void Start()
     {
         Invoke("FindPlayers",0.01f);
+        //FindPlayers();
     }
     void FindPlayers(){
         GameObject[] players = GameObject.FindGameObjectsWithTag("Player");

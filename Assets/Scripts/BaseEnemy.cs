@@ -18,13 +18,19 @@ public class BaseEnemy : MonoBehaviour
 
     public float targetingRange;
     public float loseTargetingRange;
+    public int targetID;
+
     public float attackRange;
     public float attackCD;
 
-    [SerializeField]GameObject targetPlayer;
+    [SerializeField] GameObject targetPlayer;
     private bool _isMoving = false;
     private bool _isAttacking = false;
     private Vector3 _scale;
+
+    [SerializeField] private GameObject damagePopup;
+
+    [SerializeField] private GameObject gameManager;
 
 
     void Start()
@@ -37,9 +43,10 @@ public class BaseEnemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        CheckTargetPlayer();
         Attack(); //attack() should be called before move()
         Move();
-        CheckTargetPlayer();
+        
         if (health <= 0){
             switch (enemyId)
             {
@@ -86,12 +93,20 @@ public class BaseEnemy : MonoBehaviour
                     _isAttacking = true;
                     _isMoving = false; //stop moving animation
                     StartCoroutine(AttackAnimation()); //animate before applying damage in case player is destoryed(dead)
+
+                    /*
                     if (targetPlayer.GetComponent<Player>().GetSpellDamage(attackDamage))
                     {
+                        Debug.Log("BaseEnemy Script");
                         GetComponent<Pathfinding.AIDestinationSetter>().target = null;
                         targetPlayer.transform.position = targetPlayer.GetComponent<Player>().spawnPos;
                         targetPlayer = null;
                     }
+                    else
+                    {
+                        Debug.Log("BaseEnemy Script");
+                    }
+                    */
                     
                 }
             }
@@ -104,24 +119,56 @@ public class BaseEnemy : MonoBehaviour
         if (collision.gameObject.CompareTag("spell"))
         {
             GameObject ob = collision.gameObject;
-            applySpell(ob.GetComponent<BaseBullet>().element, ob.GetComponent<BaseBullet>().damage);
+            float spellDamage = ob.GetComponent<BaseBullet>().damage;
+            applySpell(ob.GetComponent<BaseBullet>().element, spellDamage);
+
+            /*
+            Vector3 dmgPopupPos = transform.position;
+            GameObject dmgPopup = Instantiate(damagePopup, dmgPopupPos, transform.rotation);
+            dmgPopup.GetComponent<DamagePopup>().Setup(spellDamage);
+            */
+
             Destroy(ob); //destroy spell bullet after collision;
         }
     }
 
     private void applySpell(spellType spell, float default_damage)
     {
-        if(spell == weakSpellType)
+        if (spell == weakSpellType)
         {
-            health -= weaknessDamageFactor * default_damage;
+            float weakDamage = weaknessDamageFactor * default_damage;
+            health -= weakDamage;
+
+            //Vector3 dmgPopupPos = transform.position + new Vector3(0, 0.5f, 0);
+            Vector3 dmgPopupPos = transform.position;
+            GameObject dmgPopup = Instantiate(damagePopup, dmgPopupPos, transform.rotation);
+            dmgPopup.GetComponent<DamagePopup>().Setup(weakDamage);
         }
-        else if(spell == resistedSpellType)
+        else if (spell == resistedSpellType)
         {
-            health -= resistedDamageFactor * default_damage;
+            float resistDamage = resistedDamageFactor * default_damage;
+            health -= resistDamage;
+
+            //Vector3 dmgPopupPos = transform.position + new Vector3(0, 0.5f, 0);
+            Vector3 dmgPopupPos = transform.position;
+            GameObject dmgPopup = Instantiate(damagePopup, dmgPopupPos, transform.rotation);
+            dmgPopup.GetComponent<DamagePopup>().Setup(resistDamage);
         }
-        else if(spell != immuneSpellType)
+        else if (spell != immuneSpellType)
         {
             health -= default_damage;
+
+            //Vector3 dmgPopupPos = transform.position + new Vector3(0, 0.5f, 0);
+            Vector3 dmgPopupPos = transform.position;
+            GameObject dmgPopup = Instantiate(damagePopup, dmgPopupPos, transform.rotation);
+            dmgPopup.GetComponent<DamagePopup>().Setup(default_damage);
+        }
+        else if (spell == immuneSpellType)
+        {
+            //Vector3 dmgPopupPos = transform.position + new Vector3(0, 0.5f, 0);
+            Vector3 dmgPopupPos = transform.position;
+            GameObject dmgPopup = Instantiate(damagePopup, dmgPopupPos, transform.rotation);
+            dmgPopup.GetComponent<DamagePopup>().Setup(0);
         }
 
         if (health <= 0)
@@ -145,9 +192,10 @@ public class BaseEnemy : MonoBehaviour
 
     private void CheckTargetPlayer()
     {
+        
         GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
         foreach (GameObject p in players){
-            if (!targetPlayer)
+            if (targetPlayer == null)
             {
                 for (int i=0;i<players.GetLength(0);++i)
                 {
@@ -158,7 +206,9 @@ public class BaseEnemy : MonoBehaviour
                     }
                 }
             }
-            else if(targetPlayer){
+            else if(targetPlayer != null){
+                targetID = targetPlayer.GetComponent<Player>().playId;
+
                 if (Vector2.Distance(targetPlayer.transform.position, transform.position) >= loseTargetingRange)
                 {
                     targetPlayer = null;
@@ -171,6 +221,21 @@ public class BaseEnemy : MonoBehaviour
                         targetPlayer = p;
                         GetComponent<Pathfinding.AIDestinationSetter>().target = targetPlayer.transform;
                         return;
+                    }
+                }
+
+                if (targetID == 0)
+                {
+                    if (gameManager.GetComponent<GameManager>().p1health == 0)
+                    {
+                        targetPlayer = null;
+                    }
+                }
+                else if (targetID == 1)
+                {
+                    if (gameManager.GetComponent<GameManager>().p2health == 0)
+                    {
+                        targetPlayer = null;
                     }
                 }
             }
@@ -193,8 +258,10 @@ public class BaseEnemy : MonoBehaviour
     {
         Vector3 currentPos = transform.position;
         Vector3 targetPos = targetPlayer.transform.position;
+
         transform.Translate((targetPos - transform.position).normalized * -3f * Time.deltaTime);
         yield return new WaitForSeconds(0.2f);
+
         transform.Translate((targetPos - transform.position).normalized * 3f * Time.deltaTime);
         yield return new WaitForSeconds(0.05f);
 

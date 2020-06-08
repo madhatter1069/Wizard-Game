@@ -18,6 +18,7 @@ TagManager:
   - Healing
   - EnemySpell
   - Boss
+  - MovableObject
   layers:
   - Default
   - TransparentFX
@@ -30,8 +31,8 @@ TagManager:
   - Background
   - walls
   - ground
-  - 
-  - 
+  - DamagePopups
+  - MovableObjects
   - 
   - 
   - 
@@ -72,4 +73,7 @@ TagManager:
     locked: 0
   - name: Players
     uniqueID: 1897192633
+    locked: 0
+  - name: DamagePopups
+    uniqueID: 2267263695
     locked: 0
