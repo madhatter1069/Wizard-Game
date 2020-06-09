@@ -201,12 +201,12 @@ MonoBehaviour:
   immuneSpellType: 6
   weaknessDamageFactor: 1
   resistedDamageFactor: 1
-  targetingRange: 6.5
-  loseTargetingRange: 7
+  targetingRange: 6
+  loseTargetingRange: 6.5
   attackRange: 0
   attackCD: 0.8
   spell: {fileID: 1495325338612393660, guid: c95b26abac5ce465c9518adefea96b9b, type: 3}
-  spellSpeed: 6
+  spellSpeed: 5
   targetPlayer: {fileID: 0}
   damagePopup: {fileID: 6593709525983444407, guid: 131d6fe538590654cb4a1fdf49b1c7bb,
     type: 3}

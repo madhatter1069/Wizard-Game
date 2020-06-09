@@ -61,6 +61,8 @@
      <Compile Include="Assets\Scripts\BossEnemy.cs" />
      <Compile Include="Assets\Scripts\CameraPan.cs" />
      <Compile Include="Assets\Scripts\CharacterSelect.cs" />
+     <Compile Include="Assets\Scripts\Crate.cs" />
+     <Compile Include="Assets\Scripts\DamagePopup.cs" />
      <Compile Include="Assets\Scripts\EnemyAi.cs" />
      <Compile Include="Assets\Scripts\EnemyBullet.cs" />
      <Compile Include="Assets\Scripts\GameManager.cs" />
