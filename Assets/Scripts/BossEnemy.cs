@@ -32,8 +32,8 @@ public class BossEnemy : MonoBehaviour
 
     private Vector3 _scale;
 
+    [SerializeField] private GameObject damagePopup;
 
-    
 
     void Start()
     {
@@ -83,12 +83,38 @@ public class BossEnemy : MonoBehaviour
 
     private void applySpell(spellType spell, float default_damage)
     {
-        if(spell == weakSpellType)
-        {health -= weaknessDamageFactor * default_damage;}
-        else if(spell == resistedSpellType)
-        {health -= resistedDamageFactor * default_damage;}
-        else if(spell != immuneSpellType)
-        {health -= default_damage;}
+        if (spell == weakSpellType)
+        {
+            float weakDamage = weaknessDamageFactor * default_damage;
+            health -= weakDamage;
+
+            Vector3 dmgPopupPos = transform.position;
+            GameObject dmgPopup = Instantiate(damagePopup, dmgPopupPos, transform.rotation);
+            dmgPopup.GetComponent<DamagePopup>().Setup(weakDamage);
+        }
+        else if (spell == resistedSpellType)
+        {
+            float resistDamage = resistedDamageFactor * default_damage;
+            health -= resistDamage;
+
+            Vector3 dmgPopupPos = transform.position;
+            GameObject dmgPopup = Instantiate(damagePopup, dmgPopupPos, transform.rotation);
+            dmgPopup.GetComponent<DamagePopup>().Setup(resistDamage);
+        }
+        else if (spell != immuneSpellType)
+        {
+            health -= default_damage;
+
+            Vector3 dmgPopupPos = transform.position;
+            GameObject dmgPopup = Instantiate(damagePopup, dmgPopupPos, transform.rotation);
+            dmgPopup.GetComponent<DamagePopup>().Setup(default_damage);
+        }
+        else if (spell == immuneSpellType)
+        {
+            Vector3 dmgPopupPos = transform.position;
+            GameObject dmgPopup = Instantiate(damagePopup, dmgPopupPos, transform.rotation);
+            dmgPopup.GetComponent<DamagePopup>().Setup(0);
+        }
         
         if (health <= 0)
         {

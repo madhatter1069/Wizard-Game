@@ -18,6 +18,12 @@ public class Player : MonoBehaviour
 
     public Animator anim;
 
+    [SerializeField] private GameObject damagePopup;
+
+    private bool canTakeDamage = true;
+    private float invincibleTime = 0.5f;
+    private float nextHitTime;
+
 
     void Start()
     {
@@ -46,10 +52,15 @@ public class Player : MonoBehaviour
         spell=Newspell;
     }
     
-    void Update()
+    void FixedUpdate()
     {
         Move();
         Shoot();
+
+        if (Time.time > nextHitTime)
+        {
+            canTakeDamage = true;
+        }
     }
 
     //private functional helpers
@@ -162,19 +173,37 @@ public class Player : MonoBehaviour
 
     public bool GetSpellDamage(int damage)
     {
-        health -= damage;
-        gameObject.GetComponent<Health>().doDamage(damage);
-        if (health <= 0)
+        if (canTakeDamage == true)
         {
-            gameObject.SetActive(false);
-            //transform.position = spawnPos;
-            playerdead();
-            return true;
-        }
-        StartCoroutine(DamageAnimation());
-        return false;
+            canTakeDamage = false;
 
+            health -= damage;
+
+            Vector3 dmgPopupPos = transform.position;
+            GameObject dmgPopup = Instantiate(damagePopup, dmgPopupPos, new Quaternion(0, 0, 0, 0));
+            dmgPopup.GetComponent<DamagePopup>().Setup(damage);
+
+            gameObject.GetComponent<Health>().doDamage(damage);
+
+            if (health <= 0)
+            {
+                gameObject.SetActive(false);
+                //transform.position = spawnPos;
+                playerdead();
+                return true;
+            }
+
+            StartCoroutine(DamageAnimation());
+            //return false;
+
+            nextHitTime = Time.time + invincibleTime;
+
+            //Debug.Log("Player " + playId + " health/maxHealth: " + health + "/" + maxHealth);
+        }
+        return false;
     }
+
+
     void playerdead(){
         object[] obj = GameObject.FindObjectsOfType<GameObject>();
             foreach (object o in obj)

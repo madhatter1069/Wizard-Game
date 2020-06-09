@@ -21,9 +21,10 @@ public Sprite emptyHeart;
     void Start(){
         health = numOfHearts*4;
         hearts = new Image [numOfHearts];
-        lastHeart =numOfHearts-1;
+        lastHeart = numOfHearts-1;
         
         object[] obj = GameObject.FindObjectsOfType<GameObject>();
+        
         foreach (object o in obj)
         {
             GameObject g = (GameObject) o;
@@ -47,7 +48,8 @@ public Sprite emptyHeart;
 
     void Update()
     {
-        if (health > numOfHearts*4){
+        if (health > numOfHearts*4)
+        {
             health = numOfHearts*4;
         }
 
@@ -67,8 +69,18 @@ public Sprite emptyHeart;
         }
            
     }
-    void OnCollisionEnter2D(Collision2D col){
+    
+    void OnCollisionEnter2D(Collision2D col)
+    {
         if(col.gameObject.CompareTag("enemy")){
+            gameObject.GetComponent<Player>().GetSpellDamage(1);
+        }
+    }
+
+    void OnCollisionStay2D(Collision2D col)
+    {
+        if (col.gameObject.CompareTag("enemy"))
+        {
             gameObject.GetComponent<Player>().GetSpellDamage(1);
         }
     }
@@ -78,16 +90,20 @@ public Sprite emptyHeart;
         {
             if (health>0){
                 health--;
-                if (hearts[lastHeart].sprite == fullHeart){
+                if (hearts[lastHeart].sprite == fullHeart)
+                {
                     hearts[lastHeart].sprite = Heart34;
                 }
-                else if (hearts[lastHeart].sprite == Heart34){
+                else if (hearts[lastHeart].sprite == Heart34)
+                {
                     hearts[lastHeart].sprite = HalfHeart;
                 }
-                else if (hearts[lastHeart].sprite == HalfHeart){
+                else if (hearts[lastHeart].sprite == HalfHeart)
+                {
                     hearts[lastHeart].sprite = QuartHeart;
                 }
-                else if (hearts[lastHeart].sprite == QuartHeart){
+                else if (hearts[lastHeart].sprite == QuartHeart)
+                {
                     hearts[lastHeart].sprite = emptyHeart;
                     --lastHeart;
                 }
@@ -99,20 +115,24 @@ public Sprite emptyHeart;
     {
         for(int i=0; i<regen; i++)
         {
-            if (health<numOfHearts*4)
+            if (health < numOfHearts*4)
             {
                 health++;
-                if (hearts[lastHeart].sprite == fullHeart){
+                if (hearts[lastHeart].sprite == fullHeart)
+                {
                     lastHeart++;
                     hearts[lastHeart].sprite = QuartHeart;
                 }
-                else if (hearts[lastHeart].sprite == Heart34){
+                else if (hearts[lastHeart].sprite == Heart34)
+                {
                     hearts[lastHeart].sprite = fullHeart;
                 }
-                else if (hearts[lastHeart].sprite == HalfHeart){
+                else if (hearts[lastHeart].sprite == HalfHeart)
+                {
                     hearts[lastHeart].sprite = Heart34;
                 }
-                else if (hearts[lastHeart].sprite == QuartHeart){
+                else if (hearts[lastHeart].sprite == QuartHeart)
+                {
                     hearts[lastHeart].sprite = HalfHeart;
                 }
             }
