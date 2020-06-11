@@ -7,6 +7,7 @@ public class CameraPan : MonoBehaviour
     public GameObject player1;
     public GameObject player2;
     public GameObject Boss;
+    public bool newRoom = false;
     
     // Start is called before the first frame update
     void Start()
@@ -27,7 +28,10 @@ public class CameraPan : MonoBehaviour
     // Update is called once per frame
     void LateUpdate()
     {
-        MoveCam();
+        if (player1 || player2)
+        {
+            MoveCam();
+        }
     }
 
     void MoveCam(){
@@ -37,46 +41,75 @@ public class CameraPan : MonoBehaviour
         Camera cam = Camera.main;
         
         if(player1.transform.position.x > gameObject.transform.position.x + size){
+            newRoom = true;
             gameObject.transform.Translate(16f,0,0);
-            player2.transform.position = player1.transform.position;
+            if (player2)
+            {
+                player2.transform.position = player1.transform.position;
+            }
             Boss.GetComponent<BossEnemy>().ResetHealth();
+            
         }
         if(player2 && player2.transform.position.x > gameObject.transform.position.x + size){
+            newRoom = true;
             gameObject.transform.Translate(16f,0,0);
             player1.transform.position = player2.transform.position;
             Boss.GetComponent<BossEnemy>().ResetHealth();
         }
+
         if(player1.transform.position.y > (gameObject.transform.position.y + size)){
+            newRoom = true;
             gameObject.transform.Translate(0,16f,0);
-            player2.transform.position = player1.transform.position;
+            if (player2)
+            {
+                player2.transform.position = player1.transform.position;
+            }
             Boss.GetComponent<BossEnemy>().ResetHealth();
         }
         if(player2 && player2.transform.position.y > gameObject.transform.position.y + size){
+            newRoom = true;
             gameObject.transform.Translate(0,16f,0);
             player1.transform.position = player2.transform.position;
             Boss.GetComponent<BossEnemy>().ResetHealth();
         }
 
         if(player1.transform.position.x < gameObject.transform.position.x - size){
+            newRoom = true;
             gameObject.transform.Translate(-16f,0,0);
-            player2.transform.position = player1.transform.position;
+            if (player2)
+            {
+                player2.transform.position = player1.transform.position;
+            }
             Boss.GetComponent<BossEnemy>().ResetHealth();
         }
         if(player2 && player2.transform.position.x < gameObject.transform.position.x - size){
+            newRoom = true;
             gameObject.transform.Translate(-16f,0,0);
             player1.transform.position = player2.transform.position;
             Boss.GetComponent<BossEnemy>().ResetHealth();
         }
+
         if(player1.transform.position.y < (gameObject.transform.position.y - size)){
+            newRoom = true;
             gameObject.transform.Translate(0,-16f,0);
-            player2.transform.position = player1.transform.position;
+            if (player2)
+            {
+                player2.transform.position = player1.transform.position;
+            }
             Boss.GetComponent<BossEnemy>().ResetHealth();
         }
         if(player2 && player2.transform.position.y < gameObject.transform.position.y - size){
+            newRoom = true;
             gameObject.transform.Translate(0,-16f,0);
             player1.transform.position = player2.transform.position;
             Boss.GetComponent<BossEnemy>().ResetHealth();
         }
         
     }
+
+    public void ResetNewRoom()
+    {
+        newRoom = false;
+    }
+
 }

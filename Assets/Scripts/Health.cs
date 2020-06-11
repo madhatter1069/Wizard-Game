@@ -22,9 +22,10 @@ public Sprite emptyHeart;
         health = numOfHearts*4;
         hearts = new Image [numOfHearts];
         lastHeart = numOfHearts-1;
-        
+
         object[] obj = GameObject.FindObjectsOfType<GameObject>();
-        
+
+
         foreach (object o in obj)
         {
             GameObject g = (GameObject) o;
@@ -32,12 +33,16 @@ public Sprite emptyHeart;
                 ID = transform.GetComponent<Player>().playId;
                 for (int i = 0; i < g.transform.childCount; i++)
                 {
-                    GameObject heartList = g.transform.GetChild(i).gameObject;
-                    
-                    if ( heartList.name == "P" + (ID+1).ToString() + "hearts" ){
-                        for (int a = 0; a < heartList.transform.childCount; a++)
+                    if (g.tag != "Direction Arrow" && g.tag != "UIBackground")
+                    {
+                        GameObject heartList = g.transform.GetChild(i).gameObject;
+
+                        if (heartList.name == "P" + (ID + 1).ToString() + "hearts")
                         {
-                            hearts[a] = heartList.transform.GetChild(a).gameObject.GetComponent<Image>();
+                            for (int a = 0; a < heartList.transform.childCount; a++)
+                            {
+                                hearts[a] = heartList.transform.GetChild(a).gameObject.GetComponent<Image>();
+                            }
                         }
                     }
 
