@@ -19,6 +19,10 @@ TagManager:
   - EnemySpell
   - Boss
   - MovableObject
+  - DirectionArrow
+  - UIHeart
+  - Door
+  - UIBackground
   layers:
   - Default
   - TransparentFX
@@ -76,4 +80,7 @@ TagManager:
     locked: 0
   - name: DamagePopups
     uniqueID: 2267263695
+    locked: 0
+  - name: TitleScreen
+    uniqueID: 170976173
     locked: 0
