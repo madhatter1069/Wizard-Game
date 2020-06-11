@@ -119,15 +119,38 @@ public class Player : MonoBehaviour
             anim.SetInteger("Vertical", 0);
             anim.SetInteger("Horizontal", 1);
         }
+
+        /*
+        if (Input.GetKey(up) == true && Input.GetKey(down) == true)
+        {
+            gameObject.transform.Translate(currentFacing * 0);
+        }
+
+        if (Input.GetKey(left) == true && Input.GetKey(right) == true)
+        {
+            gameObject.transform.Translate(currentFacing * 0);
+        }
+        */
+
         if (getKey)
         {
-            currentFacing = (UpDown + LeftRight).normalized;
-            gameObject.transform.Translate(currentFacing * moveSpeed * Time.deltaTime);
+            if (!(Input.GetKey(up) == true && Input.GetKey(down) == true) && !(Input.GetKey(left) == true && Input.GetKey(right) == true))
+            {
+                currentFacing = (UpDown + LeftRight).normalized;
+                gameObject.transform.Translate(currentFacing * moveSpeed * Time.deltaTime);
+            }
+            else
+            {
+                anim.SetBool("Walking", false);
+            }
+
         }
         if (Input.GetKey(up)==false && Input.GetKey(down) == false && Input.GetKey(left) == false && Input.GetKey(right) == false)
         {
             anim.SetBool("Walking", false);
         }
+
+
     }
 
     private void Shoot()
