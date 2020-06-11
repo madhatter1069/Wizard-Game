@@ -30,7 +30,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5005767601072213967}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.5549574, y: 0.1, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
@@ -99,7 +99,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.05811596, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -172,14 +172,15 @@ MonoBehaviour:
   numOfHearts: 3
   lastHeart: 0
   hearts: []
-  fullHeart: {fileID: 5869410648539813710, guid: a80c4b32776bbb84e98beea2d7a5c82d,
+  fullHeart: {fileID: 4208247903061554393, guid: 3acd4ff5a3717fa4e8b5c817e817cc96,
     type: 3}
-  Heart34: {fileID: 8533468016130296359, guid: a80c4b32776bbb84e98beea2d7a5c82d, type: 3}
-  HalfHeart: {fileID: -7219173596208366012, guid: a80c4b32776bbb84e98beea2d7a5c82d,
+  Heart34: {fileID: -3390947421422129153, guid: 3acd4ff5a3717fa4e8b5c817e817cc96,
     type: 3}
-  QuartHeart: {fileID: -1611503947219306815, guid: a80c4b32776bbb84e98beea2d7a5c82d,
+  HalfHeart: {fileID: 1623455780532983838, guid: 3acd4ff5a3717fa4e8b5c817e817cc96,
     type: 3}
-  emptyHeart: {fileID: 790267400001296970, guid: a80c4b32776bbb84e98beea2d7a5c82d,
+  QuartHeart: {fileID: -825794942239586143, guid: 3acd4ff5a3717fa4e8b5c817e817cc96,
+    type: 3}
+  emptyHeart: {fileID: -940856395285965034, guid: 3acd4ff5a3717fa4e8b5c817e817cc96,
     type: 3}
 --- !u!95 &4285034437877371025
 Animator:

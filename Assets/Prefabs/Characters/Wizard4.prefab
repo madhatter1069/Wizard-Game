@@ -29,13 +29,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2053054230091835507}
-  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 2.1374366, y: 0.1, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2053054230091835510
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -99,7 +99,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.02905798}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -110,7 +110,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.875, y: 1}
+  m_Size: {x: 0.875, y: 0.94188404}
   m_EdgeRadius: 0
 --- !u!50 &2053054230091835509
 Rigidbody2D:
@@ -172,14 +172,15 @@ MonoBehaviour:
   numOfHearts: 3
   lastHeart: 0
   hearts: []
-  fullHeart: {fileID: 5869410648539813710, guid: a80c4b32776bbb84e98beea2d7a5c82d,
+  fullHeart: {fileID: 4208247903061554393, guid: 3acd4ff5a3717fa4e8b5c817e817cc96,
     type: 3}
-  Heart34: {fileID: 8533468016130296359, guid: a80c4b32776bbb84e98beea2d7a5c82d, type: 3}
-  HalfHeart: {fileID: -7219173596208366012, guid: a80c4b32776bbb84e98beea2d7a5c82d,
+  Heart34: {fileID: -3390947421422129153, guid: 3acd4ff5a3717fa4e8b5c817e817cc96,
     type: 3}
-  QuartHeart: {fileID: -1611503947219306815, guid: a80c4b32776bbb84e98beea2d7a5c82d,
+  HalfHeart: {fileID: 1623455780532983838, guid: 3acd4ff5a3717fa4e8b5c817e817cc96,
     type: 3}
-  emptyHeart: {fileID: 790267400001296970, guid: a80c4b32776bbb84e98beea2d7a5c82d,
+  QuartHeart: {fileID: -825794942239586143, guid: 3acd4ff5a3717fa4e8b5c817e817cc96,
+    type: 3}
+  emptyHeart: {fileID: -940856395285965034, guid: 3acd4ff5a3717fa4e8b5c817e817cc96,
     type: 3}
 --- !u!95 &4297393447488027956
 Animator:
