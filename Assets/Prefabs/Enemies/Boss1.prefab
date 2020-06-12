@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 2100287894345463404}
   m_Layer: 0
   m_Name: Boss1
-  m_TagString: Boss
+  m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -99,9 +99,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.03}
+  m_Offset: {x: 0, y: 0.0057370663}
   serializedVersion: 2
-  m_Radius: 0.35
+  m_Radius: 0.5330741
 --- !u!114 &4901136916539323561
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -157,7 +157,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 2
-  radius: 0.08
+  radius: 0.54
   height: 2
   repathRate: 0.5
   canSearch: 1
@@ -174,9 +174,9 @@ MonoBehaviour:
   maxAcceleration: -2.5
   rotationSpeed: 360
   slowdownDistance: 4
-  pickNextWaypointDist: 6.5
+  pickNextWaypointDist: 1.1
   endReachedDistance: 3
-  alwaysDrawGizmos: 1
+  alwaysDrawGizmos: 0
   slowWhenNotFacingTarget: 1
   whenCloseToDestination: 0
   constrainInsideGraph: 0

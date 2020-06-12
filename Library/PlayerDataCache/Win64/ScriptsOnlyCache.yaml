@@ -5,8 +5,12 @@ ScriptsOnlyBuild:
     - BaseBullet
     - BaseEnemy
     - BossEnemy
+    - BoulderDoor
     - CameraPan
     - CharacterSelect
+    - Crate
+    - DamagePopup
+    - DirectionArrow
     - EnemyBullet
     - GameManager
     - Healing
@@ -15,7 +19,6 @@ ScriptsOnlyBuild:
     - PickableSpell
     - Player
     - Spell
-    - openDoors
     - playerspawn
     AstarPathfindingProject.dll:
     - AstarPath
@@ -37,6 +40,7 @@ ScriptsOnlyBuild:
     - TMPro.TMP_Settings
     - TMPro.TMP_SpriteAsset
     - TMPro.TMP_StyleSheet
+    - TMPro.TextMeshPro
     - TMPro.TextMeshProUGUI
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -58,11 +62,17 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 21
       Script: {instanceID: 0}
+    - Class: 23
+      Script: {instanceID: 0}
     - Class: 28
+      Script: {instanceID: 0}
+    - Class: 33
       Script: {instanceID: 0}
     - Class: 48
       Script: {instanceID: 0}
     - Class: 50
+      Script: {instanceID: 0}
+    - Class: 58
       Script: {instanceID: 0}
     - Class: 60
       Script: {instanceID: 0}
@@ -95,8 +105,6 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 10004}
     - Class: 114
-      Script: {instanceID: 10032}
-    - Class: 114
       Script: {instanceID: 10238}
     - Class: 114
       Script: {instanceID: 10308}
@@ -107,27 +115,37 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 10542}
     - Class: 114
-      Script: {instanceID: 10610}
+      Script: {instanceID: 10558}
     - Class: 114
-      Script: {instanceID: 10768}
+      Script: {instanceID: 10612}
     - Class: 114
-      Script: {instanceID: 10836}
+      Script: {instanceID: 10770}
     - Class: 114
-      Script: {instanceID: 10948}
+      Script: {instanceID: 10838}
     - Class: 114
-      Script: {instanceID: 11062}
+      Script: {instanceID: 10950}
     - Class: 114
-      Script: {instanceID: 11292}
+      Script: {instanceID: 11064}
     - Class: 114
-      Script: {instanceID: 11296}
+      Script: {instanceID: 11294}
     - Class: 114
-      Script: {instanceID: 11368}
+      Script: {instanceID: 11298}
     - Class: 114
-      Script: {instanceID: 11428}
+      Script: {instanceID: 11348}
     - Class: 114
-      Script: {instanceID: 11580}
+      Script: {instanceID: 11372}
     - Class: 114
-      Script: {instanceID: 11718}
+      Script: {instanceID: 11432}
+    - Class: 114
+      Script: {instanceID: 11584}
+    - Class: 114
+      Script: {instanceID: 11692}
+    - Class: 114
+      Script: {instanceID: 11722}
+    - Class: 114
+      Script: {instanceID: 16200}
+    - Class: 114
+      Script: {instanceID: 16202}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -188,19 +206,19 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 10408}
     - Class: 114
-      Script: {instanceID: 10808}
+      Script: {instanceID: 10810}
     - Class: 114
-      Script: {instanceID: 11062}
+      Script: {instanceID: 11064}
     - Class: 114
-      Script: {instanceID: 11080}
+      Script: {instanceID: 11082}
     - Class: 114
-      Script: {instanceID: 11292}
+      Script: {instanceID: 11294}
     - Class: 114
-      Script: {instanceID: 11368}
+      Script: {instanceID: 11372}
     - Class: 114
-      Script: {instanceID: 11574}
+      Script: {instanceID: 11578}
     - Class: 114
-      Script: {instanceID: 11804}
+      Script: {instanceID: 11808}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -332,19 +350,19 @@ ScriptsOnlyBuild:
     className: GridLayoutGroup
   - hash:
       serializedVersion: 2
-      Hash: 8934700f02e243c5277438debb3e5a20
+      Hash: 8cb5ed5bf38d35a162851816327cb85e
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Spell
   - hash:
       serializedVersion: 2
-      Hash: 1a0d6638dc7f56d0b884e5a092ea49f9
+      Hash: cf327106ce25362d2cc6bb5af12afcf7
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Player
   - hash:
       serializedVersion: 2
-      Hash: 0083a3e8dc54c0d9bca06ece13abc23c
+      Hash: a1c8027dbe61cca744397abb3af1c8c8
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: openDoors
@@ -488,7 +506,7 @@ ScriptsOnlyBuild:
     className: playerspawn
   - hash:
       serializedVersion: 2
-      Hash: 242e28a4920838c3fc62951e9555bc59
+      Hash: d567cb2b3a43f1f63711e66033733693
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: CameraPan
@@ -506,6 +524,12 @@ ScriptsOnlyBuild:
     className: AstarPath
   - hash:
       serializedVersion: 2
+      Hash: 1157c3119395c469e0cc47804eb5fc0d
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Crate
+  - hash:
+      serializedVersion: 2
       Hash: b3ab2106268377ffe25dd18ac23dca28
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
@@ -518,7 +542,7 @@ ScriptsOnlyBuild:
     className: ScrollRect
   - hash:
       serializedVersion: 2
-      Hash: aef095a2efa5ef234d2346ffb9333200
+      Hash: d2e201981d6240953950d82d6d90d4cb
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: BossEnemy
@@ -692,6 +716,12 @@ ScriptsOnlyBuild:
     className: TurnBasedAI
   - hash:
       serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: DamagePopup
+  - hash:
+      serializedVersion: 2
       Hash: f336e086360abe49a3323e5f1583c35a
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
@@ -746,7 +776,7 @@ ScriptsOnlyBuild:
     className: TMP_StyleSheet
   - hash:
       serializedVersion: 2
-      Hash: d8bff3e54f0b2a021593e752a498fa78
+      Hash: c9aa320f30c47b0e2db7cccc60f8c60f
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: BaseEnemy
@@ -870,8 +900,26 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
+  - hash:
+      serializedVersion: 2
+      Hash: 19de9862e8e069809b930f7c687e4878
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ArrowKillSwitch
+  - hash:
+      serializedVersion: 2
+      Hash: fed878b79c31c2cf962469c34defe9f8
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: BoulderDoor
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: DirectionArrow
   platform: 19
   scenePathNames:
   - Assets/Scenes/Menu.unity
   - Assets/Scenes/Dungeon.unity
-  playerPath: /Users/jaredclark/Desktop/WindowsBuild/WizardGame.exe
+  playerPath: /Users/jaredclark/Desktop/Wizard-Game/WizardGame_Windows/WizardGame.exe
