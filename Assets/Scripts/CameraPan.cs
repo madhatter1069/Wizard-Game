@@ -7,7 +7,7 @@ public class CameraPan : MonoBehaviour
     public GameObject player1;
     public GameObject player2;
     public GameObject Boss;
-    public bool newRoom = false;
+    private bool newRoom = false;
     
     // Start is called before the first frame update
     void Start()
